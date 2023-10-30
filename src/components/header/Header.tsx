@@ -30,23 +30,46 @@ const Header = () => {
             lg:w-4/5
             lg:mx-auto
             lg:flex
-            lg: justify-end
+            lg: justify-between
             lg: gap-5
             lg: items-center">
-                <div className="contact cursor-pointer">
-                    CONTACT US
+                <div className="left flex justify-start gap-5">
+                    <div className="email text-xs">
+                        <label className='mr-1  text-[13px]  opacity-80' htmlFor="">
+                            Email:
+                        </label>
+                        <a href="mailto:health-care-example@gmail.com"
+                            className='  text-sm'>
+                            health-care-example@gmail.com
+                        </a>
+                    </div>
+                    <div className="hotline ">
+                        <label className='mr-1  text-[13px]  opacity-80' htmlFor="">
+                            Hotline:
+                        </label>
+                        <a href='tell:+84987654321 ' className=' text-sm'>
+                            098 765 4321
+                        </a>
+                    </div>
                 </div>
-                <div className="location cursor-pointer">
-                    LOCATION
-                </div>
-                <div className="question  cursor-pointer">
-                    QUESTIONS
-                </div>
-                <div className="language cursor-pointer">
-                    LANGUAGE
-                </div>
-                <div className="search h-[38px] w-[38px] cursor-pointer bg-orange-400 text-3xl  flex items-center justify-center">
-                    <AiOutlineSearch />
+                <div className="right justify-end items-center gap-5 flex">
+
+
+                    <div className="contact cursor-pointer">
+                        CONTACT US
+                    </div>
+                    <div className="location cursor-pointer">
+                        LOCATION
+                    </div>
+                    <div className="question  cursor-pointer">
+                        QUESTIONS
+                    </div>
+                    <div className="language cursor-pointer">
+                        LANGUAGE
+                    </div>
+                    <div className="search h-[38px] w-[38px] cursor-pointer bg-orange-400 text-3xl  flex items-center justify-center">
+                        <AiOutlineSearch />
+                    </div>
                 </div>
             </div>
 
