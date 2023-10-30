@@ -18,11 +18,11 @@ const Banner = () => {
         slidesToScroll: 1,
     };
     return (
-        <div className='banner-container overflow-x-hidden h-[500px]'>
+        <div className='banner-container overflow-x-hidden h-[550px]'>
             <Slider {...setting} className=''>
-                <Image className='lg:h-[450px] lg:w-9/10 lg:mx-auto bg-cover' src={banner1} alt="logo" />
-                <Image className='lg:h-[450px] lg:w-9/10 lg:mx-auto bg-cover' src={banner2} alt="logo" />
-                <Image className='lg:h-[450px] lg:w-9/10 lg:mx-auto bg-cover' src={banner3} alt="logo" />
+                <Image className='lg:h-[500px] lg:w-9/10 lg:mx-auto bg-cover' src={banner1} alt="logo" />
+                <Image className='lg:h-[500px] lg:w-9/10 lg:mx-auto bg-cover' src={banner2} alt="logo" />
+                <Image className='lg:h-[500px] lg:w-9/10 lg:mx-auto bg-cover' src={banner3} alt="logo" />
             </Slider>
         </div>
     )

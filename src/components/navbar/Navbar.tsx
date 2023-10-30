@@ -7,7 +7,7 @@ const Navbar = () => {
         <div className='navbar-container hidden lg:flex lg:border'>
             <div className="desktop w-4/5 mx-auto text-[#111] text-xl flex gap-5 h-24 items-center justify-between
             ">
-                <div className="logo w-[140px] h-5">
+                <div className="logo w-[140px] h-5 cursor-pointer">
                     <Image className='w-9/10 h-[70px] mt-[-25px]' src={logo} alt="logo" />
                 </div>
                 <div className="nav-content flex gap-14 font-semibold">
