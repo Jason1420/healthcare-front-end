@@ -6,6 +6,7 @@ import Image from 'next/image'
 import banner1 from '../../assets/banner/banner1.png'
 import banner2 from '../../assets/banner/banner2.png'
 import banner3 from '../../assets/banner/banner3.png'
+import './Banner.css'
 const Banner = () => {
     const setting = {
         dots: true,
@@ -18,7 +19,7 @@ const Banner = () => {
         slidesToScroll: 1,
     };
     return (
-        <div className='banner-container overflow-x-hidden h-[550px]'>
+        <div className='banner-container overflow-hidden '>
             <Slider {...setting} className=''>
                 <Image className='lg:h-[500px] lg:w-9/10 lg:mx-auto bg-cover' src={banner1} alt="logo" />
                 <Image className='lg:h-[500px] lg:w-9/10 lg:mx-auto bg-cover' src={banner2} alt="logo" />

@@ -1,7 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import menuIcon from '../../../public/menu.svg'
-import { AiOutlineSearch } from 'react-icons/ai'
+import { AiOutlineSearch, AiFillCaretDown } from 'react-icons/ai'
+import { useTranslation } from 'react-i18next'
 const Header = () => {
+    const { t } = useTranslation()
+    const [dropdownLng, setDropdownLng] = useState<boolean>(false)
+    const handleShowDropLng = () => {
+        setDropdownLng(!dropdownLng)
+    }
     return (
         <div className=' header-container flex items-center justify-between px-2 h-12 bg-gray-header text-white 
         lg:bg-[#313334]
@@ -14,7 +20,7 @@ const Header = () => {
             {/* --- mobile --- */}
             {/* menu */}
             <div className="menu lg:hidden">
-                <svg xmlns="http://www.w3.org/2000/svg" className="ionicon w-8 h-8" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="48" d="M88 152h336M88 256h336M88 360h336" /></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" className="ionicon w-8 h-8" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeMiterlimit="10" strokeWidth="48" d="M88 152h336M88 256h336M88 360h336" /></svg>
             </div>
             {/* logo */}
             <div className="logo lg:hidden">
@@ -55,17 +61,29 @@ const Header = () => {
                 <div className="right justify-end items-center gap-5 flex">
 
 
-                    <div className="contact cursor-pointer">
+                    <div className="contact cursor-pointer hover:underline">
                         CONTACT US
                     </div>
-                    <div className="location cursor-pointer">
+                    <div className="location cursor-pointer hover:underline">
                         LOCATION
                     </div>
-                    <div className="question  cursor-pointer">
+                    <div className="question  cursor-pointer hover:underline">
                         QUESTIONS
                     </div>
-                    <div className="language cursor-pointer">
-                        LANGUAGE
+                    <div className=" relative language cursor-pointer h-[38px] bg-[#555] flex items-center px-2 gap-1 hover:underline"
+                        onClick={() => handleShowDropLng()}>
+                        <div className="">
+                            LANGUAGE
+                        </div>
+                        <div className="">
+                            <AiFillCaretDown />
+                        </div>
+                        {dropdownLng &&
+                            <div className='absolute top-[38px] w-[89px] left-0 px-3 text-[13px] text-white bg-[#555] flex flex-col gap-2 py-2 '>
+                                <div className="eng hover:underline hover:text-orange-400 transition-colors">English</div>
+                                <div className="vi hover:underline hover:text-orange-400 transition-colors">Tiếng Việt</div>
+                            </div>
+                        }
                     </div>
                     <div className="search h-[38px] w-[38px] cursor-pointer bg-orange-400 text-3xl  flex items-center justify-center">
                         <AiOutlineSearch />
