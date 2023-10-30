@@ -8,10 +8,19 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        'gray-header': '#33353F',
+        'gray-footer': '#3C3D42'
+      },
+
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      },
+
+      fontFamily: {
+        'Noto': ['Noto Sans', 'sans-serif'],
       },
     },
   },
