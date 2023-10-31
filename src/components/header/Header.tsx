@@ -2,11 +2,17 @@ import React, { useState } from 'react'
 import menuIcon from '../../../public/menu.svg'
 import { AiOutlineSearch, AiFillCaretDown } from 'react-icons/ai'
 import { useTranslation } from 'react-i18next'
+import { locales } from '@/i18n/i18n'
+import { changeLanguage } from 'i18next'
 const Header = () => {
-    const { t } = useTranslation()
+    const { i18n, t } = useTranslation('home')
+    const currentLanguage = locales[i18n.language as keyof typeof locales]
     const [dropdownLng, setDropdownLng] = useState<boolean>(false)
     const handleShowDropLng = () => {
         setDropdownLng(!dropdownLng)
+    }
+    const changLanguage = (lng: 'vi' | 'en') => {
+        i18n.changeLanguage(lng)
     }
     return (
         <div className=' header-container flex items-center justify-between px-2 h-12 bg-gray-header text-white 
@@ -62,26 +68,28 @@ const Header = () => {
 
 
                     <div className="contact cursor-pointer hover:underline">
-                        CONTACT US
+                        {t('header.contactUs').toUpperCase()}
                     </div>
                     <div className="location cursor-pointer hover:underline">
-                        LOCATION
+                        {t('header.location').toUpperCase()}
                     </div>
                     <div className="question  cursor-pointer hover:underline">
-                        QUESTIONS
+                        {t('header.question').toUpperCase()}
                     </div>
                     <div className=" relative language cursor-pointer h-[38px] bg-[#555] flex items-center px-2 gap-1 hover:underline"
                         onClick={() => handleShowDropLng()}>
                         <div className="">
-                            LANGUAGE
+                            {currentLanguage.toUpperCase()}
                         </div>
                         <div className="">
                             <AiFillCaretDown />
                         </div>
                         {dropdownLng &&
                             <div className='absolute top-[38px] w-[89px] left-0 px-3 text-[13px] text-white bg-[#555] flex flex-col gap-2 py-2 '>
-                                <div className="eng hover:underline hover:text-orange-400 transition-colors">English</div>
-                                <div className="vi hover:underline hover:text-orange-400 transition-colors">Tiếng Việt</div>
+                                <div className="eng hover:underline hover:text-orange-400 transition-colors"
+                                    onClick={() => changeLanguage("en")}>English</div>
+                                <div className="vi hover:underline hover:text-orange-400 transition-colors"
+                                    onClick={() => changeLanguage("vi")}>Tiếng Việt</div>
                             </div>
                         }
                     </div>

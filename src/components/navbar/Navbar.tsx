@@ -1,8 +1,9 @@
 import React from 'react'
 import logo from '../../assets/new-logo.png'
 import Image from 'next/image'
-
+import { useTranslation } from 'react-i18next'
 const Navbar = () => {
+    const { t } = useTranslation('home')
     return (
         <div className='navbar-container hidden lg:flex lg:border'>
             <div className="desktop w-4/5 mx-auto text-[#111] text-xl flex gap-5 h-24 items-center justify-between
@@ -12,22 +13,22 @@ const Navbar = () => {
                 </div>
                 <div className="nav-content flex gap-14 font-semibold">
                     <div className="intro cursor-pointer">
-                        Giới thiệu
+                        {t('navbar.introduce')}
                     </div>
                     <div className="service cursor-pointer">
-                        Dịch vụ
+                        {t('navbar.service')}
                     </div>
                     <div className="specialty cursor-pointer">
-                        Đội ngũ chuyên môn
+                        {t('navbar.expertTeam')}
                     </div>
                     <div className="product cursor-pointer">
-                        Sản phẩm
+                        {t('navbar.products')}
                     </div>
                     <div className="news cursor-pointer">
-                        Tin tức
+                        {t('navbar.news')}
                     </div>
                     <div className="support cursor-pointer">
-                        Hỗ trợ
+                        {t('navbar.support')}
                     </div>
                 </div>
 

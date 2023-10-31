@@ -1,0 +1,19 @@
+{
+    "header": {
+        "contactUs": "Liên hệ",
+        "location": "Địa chỉ",
+        "question": "Câu hỏi thường gặp"
+    },
+    "navbar": {
+        "introduce": "Giới thiệu",
+        "service": "Dịch vụ",
+        "expertTeam": "Đội ngũ chuyên môn",
+        "products": "Sản phẩm",
+        "news": "Tin tức",
+        "support": "Hỗ trợ"
+    },
+    "search": {
+        "title": "Tìm kiếm",
+        "placeHolder": "Nhập thông tin cần tìm kiếm"
+    }
+}

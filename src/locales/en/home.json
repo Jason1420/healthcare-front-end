@@ -1,0 +1,19 @@
+{
+    "header": {
+        "contactUs": "Contact Us",
+        "location": "Location",
+        "question": "Questions"
+    },
+    "navbar": {
+        "introduce": "Introduce",
+        "service": "Services",
+        "expertTeam": "Expert Team",
+        "products": "Products",
+        "news": "News",
+        "support": "Support"
+    },
+    "search": {
+        "title": "Search",
+        "placeHolder": "Search"
+    }
+}
