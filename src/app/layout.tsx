@@ -1,8 +1,9 @@
-
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import CustomScrollbars from '../components/CustomScrollbars/CustomScrollbars'
+import Header from '@/components/header/Header'
+import Navbar from '@/components/navbar/Navbar'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -22,11 +23,10 @@ export default function RootLayout({
         <script noModule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
       </head>
-      <CustomScrollbars style={{ height: "100vh" }}>
-        <body className={inter.className}>
-          {children}
-        </body>
-      </CustomScrollbars>
+
+      <body className={`${inter.className} overflow-hidden`}>
+        {children}
+      </body>
     </html>
   )
 }

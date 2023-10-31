@@ -12,13 +12,15 @@ export default function Home() {
     alert("clicked")
   }
   return (
-    <div className=" font-Noto">
-      <Header />
-      <Navbar />
-      <Banner />
-      <SearchBar />
-      {/* <Content /> */}
-      {/* <Footer /> */}
-    </div>
+    <CustomScrollbars universal style={{ height: "100vh" }}>
+      <div className=" font-Noto flex flex-col ">
+        <Header />
+        <Navbar />
+        <Banner />
+        <SearchBar />
+        <Content />
+        {/* <Footer /> */}
+      </div>
+    </CustomScrollbars>
   )
 }
