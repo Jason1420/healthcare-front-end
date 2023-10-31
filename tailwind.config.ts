@@ -10,7 +10,8 @@ const config: Config = {
     extend: {
       colors: {
         'gray-header': '#33353F',
-        'gray-footer': '#3C3D42'
+        'gray-footer': '#3C3D42',
+        'overplay': 'rgba(0, 0, 0,0.3)'
       },
 
       backgroundImage: {

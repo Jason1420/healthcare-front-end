@@ -1,0 +1,6 @@
+.input-nav:checked ~ .overplay {
+    display: block;
+}
+.input-nav:checked ~ .sidebar-mobile {
+    display: flex;
+}

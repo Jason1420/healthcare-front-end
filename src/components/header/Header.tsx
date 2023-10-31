@@ -1,9 +1,16 @@
 import React, { useState } from 'react'
 import menuIcon from '../../../public/menu.svg'
-import { AiOutlineSearch, AiFillCaretDown } from 'react-icons/ai'
+import { AiOutlineSearch, AiFillCaretDown, AiOutlineGlobal, AiOutlineExclamationCircle } from 'react-icons/ai'
+import { BiSupport } from 'react-icons/bi'
+import { FaTimes } from 'react-icons/fa'
+import { GiHealing } from 'react-icons/gi'
+import { TbBrandProducthunt } from 'react-icons/tb'
+import { RiServiceLine } from 'react-icons/ri'
+import { IoNewspaperOutline } from 'react-icons/io5'
 import { useTranslation } from 'react-i18next'
 import { locales } from '@/i18n/i18n'
 import { changeLanguage } from 'i18next'
+import './Header.scss'
 const Header = () => {
     const { i18n, t } = useTranslation('home')
     const currentLanguage = locales[i18n.language as keyof typeof locales]
@@ -25,9 +32,96 @@ const Header = () => {
           '>
             {/* --- mobile --- */}
             {/* menu */}
-            <div className="menu lg:hidden">
+            <label className="menu lg:hidden" htmlFor='show-navbar'>
                 <svg xmlns="http://www.w3.org/2000/svg" className="ionicon w-8 h-8" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeMiterlimit="10" strokeWidth="48" d="M88 152h336M88 256h336M88 360h336" /></svg>
+            </label>
+            <input type="checkbox" id='show-navbar' hidden className='input-nav' />
+            <label className="overplay fixed top-0 left-0 right-0 bottom-0 bg-overplay z-[1000] hidden mt-[48px] " htmlFor='show-navbar'></label>
+            <div className="sidebar-mobile fixed hidden bg-white top-0 left-0 bottom-0 w-[200px]  flex-col z-[2000]  text-[#666] transition-all gap-1 border rounded-tr-lg rounded-br-lg">
+                <label className='times ml-auto mr-[-15px] py-2 w-10' htmlFor="show-navbar">
+                    <FaTimes />
+                </label>
+                <div className="px-[5px] sidebar-mobile__item flex items-center gap-[6px] ">
+                    <div className="img text-[#666]">
+                        <AiOutlineExclamationCircle />
+                    </div>
+
+                    <div className="img-title">
+                        {t('navbar.introduce')}
+                    </div>
+                </div>
+
+                <div className="px-[5px] sidebar-mobile__item flex items-center gap-[6px] ">
+                    <div className="img call-item">
+                        <RiServiceLine />
+                    </div>
+
+                    <div className="img-title call">
+                        {t('navbar.service')}
+                    </div>
+                </div>
+                <div className="px-[5px] sidebar-mobile__item flex items-center gap-[6px] ">
+                    <div className="img">
+                        <GiHealing />
+                    </div>
+
+                    <div className="img-title">
+                        {t('navbar.expertTeam')}
+                    </div>
+                </div>
+                <div className="px-[5px] sidebar-mobile__item flex items-center gap-[6px] ">
+                    <div className="img">
+                        <TbBrandProducthunt />
+                    </div>
+
+                    <div className="img-title">
+                        {t('navbar.products')}
+                    </div>
+                </div>
+                <div className="px-[5px] sidebar-mobile__item flex items-center gap-[6px] ">
+                    <div className="img">
+                        <IoNewspaperOutline />
+                    </div>
+
+                    <div className="img-title">
+                        {t('navbar.news')}
+                    </div>
+                </div>
+                <div className="px-[5px] sidebar-mobile__item flex items-center gap-[6px] ">
+                    <div className="img">
+                        <BiSupport />
+                    </div>
+
+                    <div className="img-title">
+                        {t('navbar.support')}
+                    </div>
+                </div>
+                <div className="px-[5px] sidebar-mobile__item flex items-center gap-[6px] ">
+                    <div className="img">
+                        <AiOutlineGlobal />
+                    </div>
+
+                    <div className="img-title"
+                        onClick={() => handleShowDropLng()}>
+                        {currentLanguage}
+
+                    </div>
+
+                </div>
+                {dropdownLng &&
+                    <ul className='px-12 mt-[-5px]'>
+                        <li>
+                            <div
+                                onClick={() => changeLanguage("en")}>English</div>
+                        </li>
+                        <li>
+                            <div
+                                onClick={() => changeLanguage("vi")}>Tiếng Việt</div>
+                        </li>
+                    </ul>
+                }
             </div>
+
             {/* logo */}
             <div className="logo lg:hidden">
                 Healthcare App
