@@ -28,7 +28,7 @@ const Home = () => {
             <div className="icon text-[28px] sm:text-[5vw] text-[#009999]">
               <BsCalendar2Minus />
             </div>
-            <div className="title text-xl lg:text-2xl">
+            <div className="title text-[16px] sm:text-xl  lg:text-2xl">
               {t("mainService.schedule")}
             </div>
           </div>
@@ -36,7 +36,7 @@ const Home = () => {
             <div className="icon text-[28px] sm:text-[5vw] text-[#009999]">
               <LuStethoscope />
             </div>
-            <div className="title text-xl min-w-[320px]:text-[12px] lg:text-2xl">
+            <div className="title text-[16px] sm:text-xl  min-w-[320px]:text-[12px] lg:text-2xl">
               {t("mainService.searchDoctor")}
             </div>
           </div>
@@ -54,7 +54,12 @@ const Home = () => {
         </div>
       </div>
       {/* news */}
-
+      <div className="title">
+        Thông tin mới
+      </div>
+      <div className="news">
+        Fetching data......
+      </div>
       <Footer />
     </div>
 
