@@ -15,5 +15,10 @@
     "search": {
         "title": "Tìm kiếm",
         "placeHolder": "Nhập thông tin cần tìm kiếm"
+    },
+    "mainService": {
+        "title": "Dịch Vụ Chính",
+        "schedule": "Đặt Lịch Hẹn ",
+        "searchDoctor": "Tìm Bác Sĩ"
     }
 }

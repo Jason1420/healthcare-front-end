@@ -11,6 +11,8 @@ import { useTranslation } from 'react-i18next'
 import { locales } from '@/i18n/i18n'
 import { changeLanguage } from 'i18next'
 import './Header.scss'
+import Link from 'next/link'
+import { Endpoint } from '@/routes/Route'
 const Header = () => {
     const { i18n, t } = useTranslation('home')
     const currentLanguage = locales[i18n.language as keyof typeof locales]
@@ -124,7 +126,7 @@ const Header = () => {
 
             {/* logo */}
             <div className="logo lg:hidden">
-                Healthcare App
+                <Link href={Endpoint.HOME}> Healthcare App</Link>
             </div>
             {/* search */}
             <div className="search text-[32px] lg:hidden">

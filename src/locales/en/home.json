@@ -15,5 +15,10 @@
     "search": {
         "title": "Search",
         "placeHolder": "Search"
+    },
+    "mainService": {
+        "title": "Main Services",
+        "schedule": "Medical Appointment Reservation",
+        "searchDoctor": "Find A Medical Professional"
     }
 }
