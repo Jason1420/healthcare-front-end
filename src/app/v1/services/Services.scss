@@ -1,0 +1,24 @@
+.dvyt:checked ~ .med-service-list {
+    display: flex;
+    border: 0px;
+}
+.dvyt:checked ~ .med-service {
+    background-color: #555;
+    color: white;
+    border: 0px;
+    border-color: #555;
+    transition: all;
+    box-shadow: none;
+}
+.dvsk:checked ~ .health-service-list {
+    display: flex;
+    border: 0px;
+}
+.dvsk:checked ~ .health-service {
+    background-color: #555;
+    transition: all;
+    color: white;
+    border-bottom: 0;
+    border-color: #555;
+    box-shadow: none;
+}

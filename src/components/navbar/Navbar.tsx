@@ -4,8 +4,11 @@ import Image from 'next/image'
 import { useTranslation } from 'react-i18next'
 import Link from 'next/link'
 import { Endpoint } from '@/routes/Route'
+import { usePathname } from 'next/navigation'
 const Navbar = () => {
+    const router = usePathname()
     const { t } = useTranslation('home')
+    console.log(router)
     return (
         <div className='navbar-container hidden lg:flex lg:border'>
             <div className="desktop w-4/5 mx-auto text-[#111] text-xl flex gap-5 h-24 items-center justify-between
@@ -16,32 +19,32 @@ const Navbar = () => {
                     </Link>
                 </div>
                 <div className="nav-content flex gap-14 font-semibold">
-                    <div className="intro cursor-pointer">
+                    <div className={` intro cursor-pointer ${router == Endpoint.INTRODUCTION ? "text-[#f68b1f] transition-colors" : ""}`} >
                         <Link href={Endpoint.INTRODUCTION}>
                             {t('navbar.introduce')}
                         </Link>
                     </div>
-                    <div className="service cursor-pointer">
+                    <div className={` services cursor-pointer ${router == Endpoint.SERVICES ? "text-[#f68b1f] transition-colors" : ""}`}>
                         <Link href={Endpoint.SERVICES}>
                             {t('navbar.service')}
                         </Link>
                     </div>
-                    <div className="specialty cursor-pointer">
+                    <div className={` expertTeam cursor-pointer ${router == Endpoint.EXPERT_TEAM ? "text-[#f68b1f] transition-colors" : ""}`}>
                         <Link href={Endpoint.EXPERT_TEAM}>
                             {t('navbar.expertTeam')}
                         </Link>
                     </div>
-                    <div className="product cursor-pointer">
+                    <div className={` products cursor-pointer ${router == Endpoint.PRODUCTS ? "text-[#f68b1f] transition-colors" : ""}`}>
                         <Link href={Endpoint.PRODUCTS}>
                             {t('navbar.products')}
                         </Link>
                     </div>
-                    <div className="news cursor-pointer">
+                    <div className={` news cursor-pointer ${router == Endpoint.NEWS ? "text-[#f68b1f] transition-colors" : ""}`}>
                         <Link href={Endpoint.NEWS}>
                             {t('navbar.news')}
                         </Link>
                     </div>
-                    <div className="support cursor-pointer">
+                    <div className={` support cursor-pointer ${router == Endpoint.SUPPORT ? "text-[#f68b1f] transition-colors" : ""}`}>
                         <Link href={Endpoint.SUPPORT}>
                             {t('navbar.support')}
                         </Link>

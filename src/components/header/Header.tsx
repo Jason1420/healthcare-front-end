@@ -48,9 +48,9 @@ const Header = () => {
                         <AiOutlineExclamationCircle />
                     </div>
 
-                    <label className="img-title" htmlFor='show-navbar'>
+                    <div className="img-title" >
                         <Link href={Endpoint.INTRODUCTION}>{t('navbar.introduce')}</Link>
-                    </label>
+                    </div>
                 </div>
 
                 <div className="px-[5px] sidebar-mobile__item flex items-center gap-[6px] ">
@@ -60,7 +60,6 @@ const Header = () => {
 
                     <div className="img-title call">
                         <Link href={Endpoint.SERVICES}>{t('navbar.service')}</Link>
-
                     </div>
                 </div>
                 <div className="px-[5px] sidebar-mobile__item flex items-center gap-[6px] ">
@@ -68,36 +67,36 @@ const Header = () => {
                         <GiHealing />
                     </div>
 
-                    <label htmlFor='show-navbar' className="img-title">
+                    <div className="img-title">
                         <Link href={Endpoint.EXPERT_TEAM}>{t('navbar.expertTeam')}</Link>
-                    </label>
+                    </div>
                 </div>
                 <div className="px-[5px] sidebar-mobile__item flex items-center gap-[6px] ">
                     <div className="img">
                         <TbBrandProducthunt />
                     </div>
 
-                    <label htmlFor='show-navbar' className="img-title">
+                    <div className="img-title">
                         <Link href={Endpoint.PRODUCTS}>{t('navbar.products')}</Link>
-                    </label>
+                    </div>
                 </div>
                 <div className="px-[5px] sidebar-mobile__item flex items-center gap-[6px] ">
                     <div className="img">
                         <IoNewspaperOutline />
                     </div>
 
-                    <label htmlFor='show-navbar' className="img-title">
+                    <div className="img-title">
                         <Link href={Endpoint.NEWS}>{t('navbar.news')}</Link>
-                    </label>
+                    </div>
                 </div>
                 <div className="px-[5px] sidebar-mobile__item flex items-center gap-[6px] ">
                     <div className="img">
                         <BiSupport />
                     </div>
 
-                    <label htmlFor='show-navbar' className="img-title">
+                    <div className="img-title">
                         <Link href={Endpoint.SUPPORT}>{t('navbar.support')}</Link>
-                    </label>
+                    </div>
                 </div>
                 <div className="px-[5px] sidebar-mobile__item flex items-center gap-[6px] ">
                     <div className="img">
