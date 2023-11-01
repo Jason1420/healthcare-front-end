@@ -10,8 +10,40 @@ import { RiSearch2Line } from 'react-icons/ri'
 import SearchBar from '@/components/searchBar/SearchBar'
 import { Endpoint } from '../routes/Route'
 import { useTranslation } from 'react-i18next'
+import axios from 'axios'
+import { useEffect, useState } from 'react'
+import { ApiURL } from '@/routes/ApiUrl'
+import useSWR, { Fetcher } from 'swr'
+import { CMSToken } from '@/constant/CMSToken'
+import Image from 'next/image'
 const Home = () => {
   const { t } = useTranslation()
+  const fetchWithToken = (url: string, token: string) =>
+    axios
+      .get(url, { headers: { Authorization: "Bearer " + token } })
+      .then((res) => res.data);
+  // const fetcher = (url:string) => fetch(url).then((res)=>res.json())
+  const { data, error, isLoading } = useSWR([ApiURL.getAllNews, CMSToken],
+    ([url, token]) => fetchWithToken(url, token))
+  console.log(data)
+
+  const handleSelectFile = (event: React.ChangeEvent<HTMLInputElement>) => {
+
+    let imgFiles = event.target.files;
+    console.log('---------> file before handle', imgFiles)
+    if (imgFiles) {
+      const file = imgFiles[0];
+      readFile(file)
+
+    }
+  }
+  const readFile = (file: File) => {
+    const fileReader = new FileReader()
+    if (file) {
+      console.log('---------> file after handle', file)
+      console.log('---------> file last', fileReader.readAsDataURL(file));
+    }
+  }
   return (
     <div className=" font-Noto flex flex-col ">
       <Header />
@@ -54,11 +86,42 @@ const Home = () => {
         </div>
       </div>
       {/* news */}
-      <div className="title">
+      <div className="title text-2xl font-bold mb-3 mx-auto">
         Thông tin mới
       </div>
-      <div className="news">
-        Fetching data......
+      <div className="news flex flex-col gap-4 px-2 mx-auto 
+      lg:w-4/5">
+        {!data ? <div>
+          No data
+        </div >
+          : data.data.map((item: any, index: number) => {
+            return (
+              <div className="" key={index}>
+                <div className="createAt sm:text-start text-center text-[13px] text-gray-header">
+                  {item.attributes.createAt}
+                </div>
+
+                <div className="content flex-col sm:flex-row flex gap-2 mb-5">
+                  <div className="image mx-auto sm:mx-0 ">
+                    <Image src={'http://localhost:1337' + item.attributes.img.data.attributes.formats.thumbnail.url} alt='thumbnail'
+                      width={156} height={156} />
+                  </div>
+                  <div className=" w-full sm:w-4/5">
+                    <div className="font-bold title text-sm text-center sm:text-start sm:text-base ">
+                      {item.attributes.title}
+                    </div>
+                    <div className="italic desc text-sm text-center sm:text-start sm:text-base hidden sm:flex
+                    sm:text-sm
+                    sm:py-2
+                    sm:text-justify ">
+                      {item.attributes.des}
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            )
+          })}
       </div>
       <Footer />
     </div>
