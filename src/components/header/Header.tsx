@@ -13,6 +13,7 @@ import { changeLanguage } from 'i18next'
 import './Header.scss'
 import Link from 'next/link'
 import { Endpoint } from '@/routes/Route'
+import { usePathname } from 'next/navigation'
 const Header = () => {
     const { i18n, t } = useTranslation('home')
     const currentLanguage = locales[i18n.language as keyof typeof locales]
@@ -23,6 +24,7 @@ const Header = () => {
     const changLanguage = (lng: 'vi' | 'en') => {
         i18n.changeLanguage(lng)
     }
+    const pathname = usePathname()
     return (
         <div className=' header-container flex items-center justify-between px-2 h-12 bg-gray-header text-white 
         lg:bg-[#313334]
@@ -43,67 +45,67 @@ const Header = () => {
                 <label className='times ml-auto mr-[-15px] py-2 w-10' htmlFor="show-navbar">
                     <FaTimes />
                 </label>
-                <div className="px-[5px] sidebar-mobile__item flex items-center gap-[6px] ">
-                    <div className="img text-[#666]">
+                <div className={`px-[5px] sidebar-mobile__item flex items-center gap-[6px] ${pathname == Endpoint.INTRODUCTION ? "text-[#f68b1f] transition-colors" : ""}`}>
+                    <div className="img ">
                         <AiOutlineExclamationCircle />
                     </div>
 
-                    <div className="img-title" >
+                    <div className={`img-title `} >
                         <Link href={Endpoint.INTRODUCTION}>{t('navbar.introduce')}</Link>
                     </div>
                 </div>
 
-                <div className="px-[5px] sidebar-mobile__item flex items-center gap-[6px] ">
+                <div className={`px-[5px] sidebar-mobile__item flex items-center gap-[6px] ${pathname == Endpoint.SERVICES ? "text-[#f68b1f] transition-colors" : ""}`}>
                     <div className="img call-item">
                         <RiServiceLine />
                     </div>
 
-                    <div className="img-title call">
+                    <div className={`img-title`}>
                         <Link href={Endpoint.SERVICES}>{t('navbar.service')}</Link>
                     </div>
                 </div>
-                <div className="px-[5px] sidebar-mobile__item flex items-center gap-[6px] ">
+                <div className={`px-[5px] sidebar-mobile__item flex items-center gap-[6px] ${pathname == Endpoint.EXPERT_TEAM ? "text-[#f68b1f] transition-colors" : ""}`}>
                     <div className="img">
                         <GiHealing />
                     </div>
 
-                    <div className="img-title">
+                    <div className={`img-title `}>
                         <Link href={Endpoint.EXPERT_TEAM}>{t('navbar.expertTeam')}</Link>
                     </div>
                 </div>
-                <div className="px-[5px] sidebar-mobile__item flex items-center gap-[6px] ">
+                <div className={`px-[5px] sidebar-mobile__item flex items-center gap-[6px] ${pathname == Endpoint.PRODUCTS ? "text-[#f68b1f] transition-colors" : ""}`}>
                     <div className="img">
                         <TbBrandProducthunt />
                     </div>
 
-                    <div className="img-title">
+                    <div className={`img-title `}>
                         <Link href={Endpoint.PRODUCTS}>{t('navbar.products')}</Link>
                     </div>
                 </div>
-                <div className="px-[5px] sidebar-mobile__item flex items-center gap-[6px] ">
-                    <div className="img">
+                <div className={`px-[5px] sidebar-mobile__item flex items-center gap-[6px] ${pathname == Endpoint.NEWS ? "text-[#f68b1f] transition-colors" : ""}`}>
+                    <div className="img ">
                         <IoNewspaperOutline />
                     </div>
 
-                    <div className="img-title">
+                    <div className={`img-title `}>
                         <Link href={Endpoint.NEWS}>{t('navbar.news')}</Link>
                     </div>
                 </div>
-                <div className="px-[5px] sidebar-mobile__item flex items-center gap-[6px] ">
+                <div className={`px-[5px] sidebar-mobile__item flex items-center gap-[6px] ${pathname == Endpoint.SUPPORT ? "text-[#f68b1f] transition-colors" : ""}`}>
                     <div className="img">
                         <BiSupport />
                     </div>
 
-                    <div className="img-title">
+                    <div className={`img-title `}>
                         <Link href={Endpoint.SUPPORT}>{t('navbar.support')}</Link>
                     </div>
                 </div>
-                <div className="px-[5px] sidebar-mobile__item flex items-center gap-[6px] ">
+                <div className={`px-[5px] sidebar-mobile__item flex items-center gap-[6px]`}>
                     <div className="img">
                         <AiOutlineGlobal />
                     </div>
 
-                    <div className="img-title"
+                    <div className={`img-title }`}
                         onClick={() => handleShowDropLng()}>
                         {currentLanguage}
 
@@ -113,11 +115,11 @@ const Header = () => {
                 {dropdownLng &&
                     <ul className='px-12 mt-[-5px]'>
                         <li>
-                            <div
+                            <div className={currentLanguage === "English" ? "text-[#f68b1f] transition-colors" : ""}
                                 onClick={() => changeLanguage("en")}>English</div>
                         </li>
                         <li>
-                            <div
+                            <div className={currentLanguage === "Tiếng Việt" ? "text-[#f68b1f] transition-colors" : ""}
                                 onClick={() => changeLanguage("vi")}>Tiếng Việt</div>
                         </li>
                     </ul>

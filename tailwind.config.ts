@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        'mobile': '475px',
+      },
       colors: {
         'gray-header': '#33353F',
         'gray-footer': '#3C3D42',

@@ -1,6 +1,6 @@
 'use client'
 import React from 'react'
-import { PiCaretDownBold } from 'react-icons/pi'
+import { PiCaretDownBold, PiCaretUpBold } from 'react-icons/pi'
 import './Services.scss'
 const Services = () => {
     return (
@@ -18,6 +18,7 @@ const Services = () => {
                 </div>
                 <div className="icon ml-auto my-auto pr-3">
                     <PiCaretDownBold />
+
                 </div>
             </label>
             <div className="med-service-list hidden flex-wrap bg-[#555] justify-around gap-y-3 py-3">
@@ -34,6 +35,7 @@ const Services = () => {
                 </div>
                 <div className="icon ml-auto my-auto pr-3">
                     <PiCaretDownBold />
+
                 </div>
             </label>
             <div className="health-service-list hidden flex-wrap bg-[#555] justify-around gap-y-3 py-3">

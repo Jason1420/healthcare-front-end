@@ -2,6 +2,10 @@
     display: flex;
     border: 0px;
 }
+.dvyt:checked ~ .med-service-list {
+    display: flex;
+    border: 0px;
+}
 .dvyt:checked ~ .med-service {
     background-color: #555;
     color: white;
