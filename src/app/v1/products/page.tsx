@@ -3,7 +3,7 @@ import React from 'react'
 import { PiCaretDownBold } from 'react-icons/pi'
 const Products = () => {
     return (
-        <div className=" font-Noto flex flex-col w-full sm:w-4/5 
+        <div className="product-page w-full sm:w-4/5 
         h-[100vh] mx-auto ">
             <div className="sm:hidden title mx-auto box-border border border-b-gray-300 w-full text-center font-bold py-2 text-xl h-[50px]">
                 Sản phẩm

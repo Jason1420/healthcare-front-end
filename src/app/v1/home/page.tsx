@@ -45,7 +45,7 @@ const V1Home = () => {
     }
   }
   return (
-    <div className=" font-Noto flex flex-col ">
+    <div className="home-page">
       <Banner />
       <SearchBar />
       {/* main service */}
