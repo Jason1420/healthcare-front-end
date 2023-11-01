@@ -20,5 +20,6 @@
         "title": "Main Services",
         "schedule": "Medical Appointment Reservation",
         "searchDoctor": "Find A Medical Professional"
-    }
+    },
+    "news": "Hot News"
 }

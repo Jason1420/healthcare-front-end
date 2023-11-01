@@ -22,19 +22,29 @@ const Navbar = () => {
                         </Link>
                     </div>
                     <div className="service cursor-pointer">
-                        {t('navbar.service')}
+                        <Link href={Endpoint.SERVICES}>
+                            {t('navbar.service')}
+                        </Link>
                     </div>
                     <div className="specialty cursor-pointer">
-                        {t('navbar.expertTeam')}
+                        <Link href={Endpoint.EXPERT_TEAM}>
+                            {t('navbar.expertTeam')}
+                        </Link>
                     </div>
                     <div className="product cursor-pointer">
-                        {t('navbar.products')}
+                        <Link href={Endpoint.PRODUCTS}>
+                            {t('navbar.products')}
+                        </Link>
                     </div>
                     <div className="news cursor-pointer">
-                        {t('navbar.news')}
+                        <Link href={Endpoint.NEWS}>
+                            {t('navbar.news')}
+                        </Link>
                     </div>
                     <div className="support cursor-pointer">
-                        {t('navbar.support')}
+                        <Link href={Endpoint.SUPPORT}>
+                            {t('navbar.support')}
+                        </Link>
                     </div>
                 </div>
 

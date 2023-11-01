@@ -2,10 +2,9 @@
 import React from 'react'
 import Header from '@/components/header/Header'
 import Footer from '@/components/footer/Footer'
-import CustomScrollbars from '@/components/CustomScrollbars/CustomScrollbars'
 import Navbar from '@/components/navbar/Navbar'
 
-export default function IntroductionLayout({
+export default function V1Layout({
     children,
 }: {
     children: React.ReactNode
