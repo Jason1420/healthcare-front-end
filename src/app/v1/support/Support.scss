@@ -1,0 +1,9 @@
+.card:hover > .gif {
+    display: block;
+}
+.card:hover > .png {
+    display: none;
+}
+.card:hover > .support-title {
+    font-size: 24px;
+}

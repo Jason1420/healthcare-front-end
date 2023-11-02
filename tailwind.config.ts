@@ -15,7 +15,9 @@ const config: Config = {
         'gray-header': '#33353F',
         'gray-footer': '#3C3D42',
         'overplay': 'rgba(0, 0, 0,0.3)',
-        'orange-hover': '#F68B1F'
+        'orange-hover': '#F68B1F',
+        'main-color': '#0e787c',
+
       },
 
       backgroundImage: {
