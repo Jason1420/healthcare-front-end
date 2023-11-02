@@ -6,6 +6,7 @@ import { FaTimes } from 'react-icons/fa'
 import { GiHealing } from 'react-icons/gi'
 import { TbBrandProducthunt } from 'react-icons/tb'
 import { RiServiceLine } from 'react-icons/ri'
+import { MdOutlineContactSupport } from 'react-icons/md'
 import { IoNewspaperOutline } from 'react-icons/io5'
 import { useTranslation } from 'react-i18next'
 import { locales } from '@/i18n/i18n'
@@ -98,6 +99,15 @@ const Header = () => {
 
                     <div className={`img-title `}>
                         <Link href={Endpoint.SUPPORT}>{t('navbar.support')}</Link>
+                    </div>
+                </div>
+                <div className={`px-[5px] sidebar-mobile__item flex items-center gap-[6px] ${pathname == Endpoint.CONTACT ? "text-[#f68b1f] transition-colors" : ""}`}>
+                    <div className="img">
+                        <MdOutlineContactSupport />
+                    </div>
+
+                    <div className={`img-title `}>
+                        <Link href={Endpoint.CONTACT}>{t('navbar.contact')}</Link>
                     </div>
                 </div>
                 <div className={`px-[5px] sidebar-mobile__item flex items-center gap-[6px]`}>
