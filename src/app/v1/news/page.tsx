@@ -51,8 +51,8 @@ const News = () => {
                 <div className="serv-item w-[45%] bg-white rounded-sm px-4">Tin tức 4</div>
             </div>
             {/* nội dung */}
-            <div className="desktop hidden sm:flex sm:gap-5 sm:h-full ">
-                <div className="left w-1/5 h-full bg-white border border-b-[#d7d4d4] border-r-[#d7d4d4] border-l-[#d7d4d4] ">
+            <div className="desktop  sm:flex sm:gap-5 sm:h-full ">
+                <div className="hidden sm:flex left w-1/5 h-full bg-white border border-b-[#d7d4d4] border-r-[#d7d4d4] border-l-[#d7d4d4] ">
                     <div className="title text-[26px] text-[#267376] text-right px-5 py-5 font-semibold   ">
                         Tin tức
                     </div>
@@ -75,9 +75,9 @@ const News = () => {
                         <div className="serv bg-[#f2f2f2] text-right pr-7 py-2 text-[15px] font-semibold text-[#444] hover:text-main-color hover:underline cursor-pointer ">Tin tức 4</div>
                     </div>
                 </div>
-                <div className="right w-4/5 flex justify-around flex-wrap gap-y-10 text-[#393939] pt-7 pb-10">
+                <div className="right w-[98%] sm:w-4/5 mx-auto flex justify-around flex-wrap gap-y-10 text-[#393939] pt-7 pb-10">
 
-                    <div className="serv w-[45%] flex flex-col gap-4">
+                    <div className="serv sm:w-[45%] flex flex-col gap-4">
                         <div className="item h-[60px] text-[20px] ">
                             Managing Inflammatory Bowel Disease
                         </div>
@@ -94,7 +94,7 @@ const News = () => {
                             LEARN MORE
                         </div>
                     </div>
-                    <div className="serv w-[45%] flex flex-col gap-4">
+                    <div className="serv sm:w-[45%] flex flex-col gap-4">
                         <div className="item h-[60px] text-[20px] ">
                             Professor Yun, Tae-jin Observes Patient Srijan's Post-Surgery Recovery
                         </div>
@@ -111,7 +111,7 @@ const News = () => {
                             LEARN MORE
                         </div>
                     </div>
-                    <div className="serv w-[45%] flex flex-col gap-4">
+                    <div className="serv sm:w-[45%] flex flex-col gap-4">
                         <div className="item h-[60px] text-[20px] ">
                             Pioneering Cancer Treatment: Meeting the World Leader
                         </div>
@@ -128,7 +128,7 @@ const News = () => {
                             LEARN MORE
                         </div>
                     </div>
-                    <div className="serv w-[45%] flex flex-col gap-4">
+                    <div className="serv sm:w-[45%] flex flex-col gap-4">
                         <div className="item h-[60px] text-[20px] ">
                             Nursing Care: Where the Heart Speaks Louder Than Words
                         </div>
