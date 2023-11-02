@@ -44,8 +44,8 @@ const Expert = () => {
                 <div className="serv-item w-[45%] bg-white rounded-sm px-4">Khoa 4</div>
             </div>
             {/* nội dung */}
-            <div className="desktop hidden sm:flex sm:gap-5 h-full">
-                <div className="eft w-1/5 h-full bg-white border border-b-[#d7d4d4] border-r-[#d7d4d4] border-l-[#d7d4d4] ">
+            <div className="desktop  sm:flex sm:gap-5 h-full">
+                <div className="hidden sm:flex sm:flex-col left w-1/5 h-full bg-white border border-b-[#d7d4d4] border-r-[#d7d4d4] border-l-[#d7d4d4] ">
                     <div className="title text-[26px] text-[#267376] text-right px-5 py-5 font-semibold   ">
                         Đội ngũ chuyên môn
                     </div>
@@ -68,18 +68,19 @@ const Expert = () => {
                         <div className="serv bg-[#f2f2f2] text-right pr-7 py-2 text-[15px] font-semibold text-[#444] hover:text-main-color hover:underline cursor-pointer ">Khoa 4</div>
                     </div>
                 </div>
-                <div className="right w-4/5  text-[#444]">
-                    <div className="title text-2xl font-semibold m-6 my-7 w-full border-b-[2px] border-b-[#444]  ">
+                <div className="right w-[98%] sm:w-4/5 mx-auto text-[#444]">
+                    <div className="title text-2xl font-semibold sm:m-6 my-7 w-full border-b-[2px] border-b-[#444]  ">
                         Khoa 1
                     </div>
                     <div className='flex flex-col'>
-                        <div className="list-expert mx-6 w-full ">
+                        <div className="list-expert sm:mx-6 w-full ">
                             <div className="expert flex gap-4 pb-5 mb-6 border-b-[2px] border-b-[#444]">
-                                <div className="avatar aspect-[181/225] h-[225px] w-[181px]">
-                                    <Image src={avatar} alt='avatar' className='' />
+                                <div className="avatar hidden sm:block aspect-[181/225] sm:h-[225px] sm:w-[181px]">
+                                    <Image src={avatar} alt='avatar' className='float-left ' />
                                 </div>
                                 <div className="infor flex flex-col">
-                                    <div className="name text-2xl font-semibold">
+                                    <div className="name text-2xl font-semibold flex justify-center items-center gap-5">
+                                        <Image src={avatar} alt='avatar' className='float-left sm:hidden h-[70px] w-[60px]' />
                                         Dr. Emma Wilson
                                     </div>
                                     <div className="detail border-y-[1px] border-b-[#444] border-t-[#444] py-2 flex flex-col gap-2 mt-3">
@@ -103,7 +104,7 @@ const Expert = () => {
                                             <p className='float-left font-semibold pr-5'>Giới thiệu:</p>  Dr. Emma Wilson là một chuyên gia về các vấn đề về tiêu hóa và đường ruột. Cô có hơn 10 năm kinh nghiệm trong việc chẩn đoán và điều trị các bệnh lý tiêu hóa phức tạp.
                                         </div>
                                     </div>
-                                    <div className="contact flex gap-4 justify-end mt-auto items-center pt-1">
+                                    <div className="contact flex gap-4 justify-center sm:justify-end mt-auto  items-center pt-4 sm:pt-1">
                                         <div className="detail  text-sm font-semibold cursor-pointer text-[#444] border-[#444] border-[1px] py-1 px-3 hover:underline">
                                             Thông tin chi tiết
                                         </div>
@@ -114,11 +115,12 @@ const Expert = () => {
                                 </div>
                             </div>
                             <div className="expert flex gap-4 pb-5 mb-6 border-b-[2px] border-b-[#444]">
-                                <div className="avatar aspect-[181/225] h-[225px] w-[181px]">
-                                    <Image src={avatar} alt='avatar' className='' />
+                                <div className="avatar hidden sm:block aspect-[181/225] sm:h-[225px] sm:w-[181px]">
+                                    <Image src={avatar} alt='avatar' className='float-left ' />
                                 </div>
                                 <div className="infor flex flex-col">
-                                    <div className="name text-2xl font-semibold">
+                                    <div className="name text-2xl font-semibold flex justify-center items-center gap-5">
+                                        <Image src={avatar} alt='avatar' className='float-left sm:hidden h-[70px] w-[60px]' />
                                         Dr. John Smith
                                     </div>
                                     <div className="detail border-y-[1px] border-b-[#444] border-t-[#444] py-2 flex flex-col gap-2 mt-3">
@@ -142,7 +144,7 @@ const Expert = () => {
                                             <p className='float-left font-semibold pr-5'>Giới thiệu:</p>  Dr. John Smith là một chuyên gia về các vấn đề về tim mạch. Anh đã thực hiện hàng ngàn ca phẫu thuật tim và đang là một phần quan trọng của đội ngũ chăm sóc sức khỏe tim mạch hàng đầu.
                                         </div>
                                     </div>
-                                    <div className="contact flex gap-4 justify-end mt-auto items-center pt-1">
+                                    <div className="contact flex gap-4 justify-center sm:justify-end mt-auto  items-center pt-4 sm:pt-1">
                                         <div className="detail  text-sm font-semibold cursor-pointer text-[#444] border-[#444] border-[1px] py-1 px-3 hover:underline">
                                             Thông tin chi tiết
                                         </div>
@@ -153,11 +155,12 @@ const Expert = () => {
                                 </div>
                             </div>
                             <div className="expert flex gap-4 pb-5 mb-6 border-b-[2px] border-b-[#444]">
-                                <div className="avatar aspect-[181/225] h-[225px] w-[181px]">
-                                    <Image src={avatar} alt='avatar' className='' />
+                                <div className="avatar hidden sm:block aspect-[181/225] sm:h-[225px] sm:w-[181px]">
+                                    <Image src={avatar} alt='avatar' className='float-left ' />
                                 </div>
                                 <div className="infor flex flex-col">
-                                    <div className="name text-2xl font-semibold">
+                                    <div className="name text-2xl font-semibold flex justify-center items-center gap-5">
+                                        <Image src={avatar} alt='avatar' className='float-left sm:hidden h-[70px] w-[60px]' />
                                         Dr. John Smith
                                     </div>
                                     <div className="detail border-y-[1px] border-b-[#444] border-t-[#444] py-2 flex flex-col gap-2 mt-3">
@@ -181,7 +184,7 @@ const Expert = () => {
                                             <p className='float-left font-semibold pr-5'>Giới thiệu:</p>  Dr. Sarah Adams là một bác sĩ nhi khoa với niềm đam mê trong việc chăm sóc trẻ em. Cô đã làm việc trong lĩnh vực này suốt 15 năm và luôn tận tâm trong công việc.
                                         </div>
                                     </div>
-                                    <div className="contact flex gap-4 justify-end mt-auto items-center pt-1">
+                                    <div className="contact flex gap-4 justify-center sm:justify-end mt-auto  items-center pt-4 sm:pt-1">
                                         <div className="detail  text-sm font-semibold cursor-pointer text-[#444] border-[#444] border-[1px] py-1 px-3 hover:underline">
                                             Thông tin chi tiết
                                         </div>
@@ -192,11 +195,12 @@ const Expert = () => {
                                 </div>
                             </div>
                             <div className="expert flex gap-4 pb-5 mb-6 border-b-[2px] border-b-[#444]">
-                                <div className="avatar aspect-[181/225] h-[225px] w-[181px]">
-                                    <Image src={avatar} alt='avatar' className='' />
+                                <div className="avatar hidden sm:block aspect-[181/225] sm:h-[225px] sm:w-[181px]">
+                                    <Image src={avatar} alt='avatar' className='float-left ' />
                                 </div>
                                 <div className="infor flex flex-col">
-                                    <div className="name text-2xl font-semibold">
+                                    <div className="name text-2xl font-semibold flex justify-center items-center gap-5">
+                                        <Image src={avatar} alt='avatar' className='float-left sm:hidden h-[70px] w-[60px]' />
                                         Dr. Michael Johnson
                                     </div>
                                     <div className="detail border-y-[1px] border-b-[#444] border-t-[#444] py-2 flex flex-col gap-2 mt-3">
@@ -220,7 +224,7 @@ const Expert = () => {
                                             <p className='float-left font-semibold pr-5'>Giới thiệu:</p> Dr. Michael Johnson là một bác sĩ da liễu có kinh nghiệm trong việc chẩn đoán và điều trị các vấn đề về da, từ mụn trứng cá đến các bệnh da liễu nghiêm trọng.
                                         </div>
                                     </div>
-                                    <div className="contact flex gap-4 justify-end mt-auto items-center pt-1">
+                                    <div className="contact flex gap-4 justify-center sm:justify-end mt-auto  items-center pt-4 sm:pt-1">
                                         <div className="detail  text-sm font-semibold cursor-pointer text-[#444] border-[#444] border-[1px] py-1 px-3 hover:underline">
                                             Thông tin chi tiết
                                         </div>
