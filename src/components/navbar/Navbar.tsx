@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../../assets/new-logo.png'
+import logo from '@/assets/new-logo.png'
 import Image from 'next/image'
 import { useTranslation } from 'react-i18next'
 import Link from 'next/link'

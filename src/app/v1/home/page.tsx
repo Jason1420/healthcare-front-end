@@ -3,12 +3,12 @@ import Banner from '@/components/banner/Banner'
 import Footer from '@/components/footer/Footer'
 import Header from '@/components/header/Header'
 import Navbar from '@/components/navbar/Navbar'
-import '../../../i18n/i18n'
+import '@/i18n/i18n'
 import { BsCalendar2Minus } from 'react-icons/bs'
 import { LuStethoscope } from 'react-icons/lu'
 import { RiSearch2Line } from 'react-icons/ri'
 import SearchBar from '@/components/searchBar/SearchBar'
-import { Endpoint } from '../../../routes/Route'
+import { Endpoint } from '@/routes/Route'
 import { useTranslation } from 'react-i18next'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
@@ -84,7 +84,7 @@ const V1Home = () => {
         </div>
       </div>
       {/* news */}
-      <div className="title text-2xl font-bold mb-3 mx-auto">
+      <div className="title text-2xl font-bold mb-3 mx-auto text-center">
         {t('news')}
       </div>
       <div className="news flex flex-col gap-4 px-5 mx-auto bg-white

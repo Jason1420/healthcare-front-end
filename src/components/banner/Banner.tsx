@@ -3,9 +3,9 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import Image from 'next/image'
-import banner1 from '../../assets/banner/banner1.png'
-import banner2 from '../../assets/banner/banner2.png'
-import banner3 from '../../assets/banner/banner3.png'
+import banner1 from '@/assets/banner/banner1.png'
+import banner2 from '@/assets/banner/banner2.png'
+import banner3 from '@/assets/banner/banner3.png'
 import './Banner.css'
 const Banner = () => {
     const setting = {

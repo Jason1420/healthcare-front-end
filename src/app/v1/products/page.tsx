@@ -42,9 +42,8 @@ const Products = () => {
                 <div className="serv-item w-[45%] bg-white rounded-sm px-4">Sản phẩm 4</div>
             </div>
             {/* nội dung */}
-            <div className="desktop hidden sm:flex sm:gap-5 h-[100vh]">
-                <div className="left w-1/5 bg-white border border-[#f2f2f2] h-100vh shadow-sm
-                ">
+            <div className="desktop hidden sm:flex sm:gap-5 ">
+                <div className="left w-1/5 h-full bg-white border border-b-[#d7d4d4] border-r-[#d7d4d4] border-l-[#d7d4d4] ">
                     <div className="title text-[26px] text-[#267376] text-right px-5 py-5 font-semibold   ">
                         Sản phẩm
                     </div>
@@ -52,19 +51,19 @@ const Products = () => {
                         Sản phẩm y tế
                     </div>
                     <div className="list ">
-                        <div className="serv bg-[#f2f2f2] text-right pr-7 py-2 text-[15px] font-semibold text-[#444]">Sản phẩm 1</div>
-                        <div className="serv bg-[#f2f2f2] text-right pr-7 py-2 text-[15px] font-semibold text-[#444]">Sản phẩm 2</div>
-                        <div className="serv bg-[#f2f2f2] text-right pr-7 py-2 text-[15px] font-semibold text-[#444]">Sản phẩm 3</div>
-                        <div className="serv bg-[#f2f2f2] text-right pr-7 py-2 text-[15px] font-semibold text-[#444]">Sản phẩm 4</div>
+                        <div className="serv bg-[#f2f2f2] text-right pr-7 py-2 text-[15px] font-semibold text-[#444] hover:text-main-color hover:underline cursor-pointer ">Sản phẩm 1</div>
+                        <div className="serv bg-[#f2f2f2] text-right pr-7 py-2 text-[15px] font-semibold text-[#444] hover:text-main-color hover:underline cursor-pointer ">Sản phẩm 2</div>
+                        <div className="serv bg-[#f2f2f2] text-right pr-7 py-2 text-[15px] font-semibold text-[#444] hover:text-main-color hover:underline cursor-pointer ">Sản phẩm 3</div>
+                        <div className="serv bg-[#f2f2f2] text-right pr-7 py-2 text-[15px] font-semibold text-[#444] hover:text-main-color hover:underline cursor-pointer ">Sản phẩm 4</div>
                     </div>
                     <div className="service bg-[#0e787c] h-[50px] text-[18px] text-white pr-7 justify-end flex items-center font-semibold ">
                         Sản phẩm sức khỏe
                     </div>
                     <div className="list ">
-                        <div className="serv bg-[#f2f2f2] text-right pr-7 py-2 text-[15px] font-semibold text-[#444]">Sản phẩm 1</div>
-                        <div className="serv bg-[#f2f2f2] text-right pr-7 py-2 text-[15px] font-semibold text-[#444]">Sản phẩm 2</div>
-                        <div className="serv bg-[#f2f2f2] text-right pr-7 py-2 text-[15px] font-semibold text-[#444]">Sản phẩm 3</div>
-                        <div className="serv bg-[#f2f2f2] text-right pr-7 py-2 text-[15px] font-semibold text-[#444]">Sản phẩm 4</div>
+                        <div className="serv bg-[#f2f2f2] text-right pr-7 py-2 text-[15px] font-semibold text-[#444] hover:text-main-color hover:underline cursor-pointer ">Sản phẩm 1</div>
+                        <div className="serv bg-[#f2f2f2] text-right pr-7 py-2 text-[15px] font-semibold text-[#444] hover:text-main-color hover:underline cursor-pointer ">Sản phẩm 2</div>
+                        <div className="serv bg-[#f2f2f2] text-right pr-7 py-2 text-[15px] font-semibold text-[#444] hover:text-main-color hover:underline cursor-pointer ">Sản phẩm 3</div>
+                        <div className="serv bg-[#f2f2f2] text-right pr-7 py-2 text-[15px] font-semibold text-[#444] hover:text-main-color hover:underline cursor-pointer ">Sản phẩm 4</div>
                     </div>
                 </div>
                 <div className="right w-4/5 bg-[#0e787c] h-100vh text-white">

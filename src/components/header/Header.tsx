@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import menuIcon from '../../../public/menu.svg'
+import menuIcon from '@/public/menu.svg'
 import { AiOutlineSearch, AiFillCaretDown, AiOutlineGlobal, AiOutlineExclamationCircle } from 'react-icons/ai'
 import { BiSupport } from 'react-icons/bi'
 import { FaTimes } from 'react-icons/fa'

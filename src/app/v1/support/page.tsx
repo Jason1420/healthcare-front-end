@@ -39,7 +39,7 @@ const Support = () => {
                 <div className="card w-[22%] h-[200px]  flex justify-center items-center gap-2 flex-col hover:text-main-color cursor-pointer transition-all">
                     <Image className='gif w-3/5 mx-auto hidden' src={onlineGif} alt='support poliCy' />
                     <Image className='png w-1/3 mx-auto ' src={onlinePng} alt='support online' />
-                    <div className="support-title text-center ">
+                    <div className="support-title text-xl text-center ">
                         {t('onlineSupport')}
                     </div>
                 </div>

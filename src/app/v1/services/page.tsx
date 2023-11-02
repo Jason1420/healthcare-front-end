@@ -51,28 +51,27 @@ const Services = () => {
             </div>
             {/* nội dung */}
             <div className="desktop hidden sm:flex sm:gap-5 sm:h-full">
-                <div className="left w-1/5  border border-[#f2f2f2]  shadow-sm
-                ">
+                <div className="left w-1/5 h-full bg-white border border-b-[#d7d4d4] border-r-[#d7d4d4] border-l-[#d7d4d4] ">
                     <div className="title text-[26px] text-[#267376] text-right px-5 py-5 font-semibold   ">
                         Dịch vụ
                     </div>
                     <div className="service bg-[#0e787c] h-[50px] text-[18px] text-white pr-7 justify-end flex items-center font-semibold ">
                         Dịch vụ y tế
                     </div>
-                    <div className="list ">
-                        <div className="serv bg-[#f2f2f2] text-right pr-7 py-2 text-[15px] font-semibold text-[#444]">Dịch vụ 1</div>
-                        <div className="serv bg-[#f2f2f2] text-right pr-7 py-2 text-[15px] font-semibold text-[#444]">Dịch vụ 2</div>
-                        <div className="serv bg-[#f2f2f2] text-right pr-7 py-2 text-[15px] font-semibold text-[#444]">Dịch vụ 3</div>
-                        <div className="serv bg-[#f2f2f2] text-right pr-7 py-2 text-[15px] font-semibold text-[#444]">Dịch vụ 4</div>
+                    <div className="list border border-b-[1px] border-b-[#cbc9c9]">
+                        <div className="serv bg-[#f2f2f2] text-right pr-7 py-2 text-[15px] font-semibold text-[#444] hover:text-main-color hover:underline cursor-pointer ">Dịch vụ 1</div>
+                        <div className="serv bg-[#f2f2f2] text-right pr-7 py-2 text-[15px] font-semibold text-[#444] hover:text-main-color hover:underline cursor-pointer ">Dịch vụ 2</div>
+                        <div className="serv bg-[#f2f2f2] text-right pr-7 py-2 text-[15px] font-semibold text-[#444] hover:text-main-color hover:underline cursor-pointer ">Dịch vụ 3</div>
+                        <div className="serv bg-[#f2f2f2] text-right pr-7 py-2 text-[15px] font-semibold text-[#444] hover:text-main-color hover:underline cursor-pointer ">Dịch vụ 4</div>
                     </div>
                     <div className="service bg-[#0e787c] h-[50px] text-[18px] text-white pr-7 justify-end flex items-center font-semibold ">
                         Dịch vụ sức khỏe
                     </div>
-                    <div className="list ">
-                        <div className="serv bg-[#f2f2f2] text-right pr-7 py-2 text-[15px] font-semibold text-[#444]">Dịch vụ 1</div>
-                        <div className="serv bg-[#f2f2f2] text-right pr-7 py-2 text-[15px] font-semibold text-[#444]">Dịch vụ 2</div>
-                        <div className="serv bg-[#f2f2f2] text-right pr-7 py-2 text-[15px] font-semibold text-[#444]">Dịch vụ 3</div>
-                        <div className="serv bg-[#f2f2f2] text-right pr-7 py-2 text-[15px] font-semibold text-[#444]">Dịch vụ 4</div>
+                    <div className="list border border-b-[1px] border-b-[#cbc9c9]">
+                        <div className="serv bg-[#f2f2f2] text-right pr-7 py-2 text-[15px] font-semibold text-[#444] hover:text-main-color hover:underline cursor-pointer ">Dịch vụ 1</div>
+                        <div className="serv bg-[#f2f2f2] text-right pr-7 py-2 text-[15px] font-semibold text-[#444] hover:text-main-color hover:underline cursor-pointer ">Dịch vụ 2</div>
+                        <div className="serv bg-[#f2f2f2] text-right pr-7 py-2 text-[15px] font-semibold text-[#444] hover:text-main-color hover:underline cursor-pointer ">Dịch vụ 3</div>
+                        <div className="serv bg-[#f2f2f2] text-right pr-7 py-2 text-[15px] font-semibold text-[#444] hover:text-main-color hover:underline cursor-pointer ">Dịch vụ 4</div>
                     </div>
                 </div>
                 <div className="right w-4/5 flex justify-around flex-wrap gap-y-4 text-[#393939] pt-7 pb-10">
