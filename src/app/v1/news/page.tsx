@@ -52,7 +52,7 @@ const News = () => {
             </div>
             {/* nội dung */}
             <div className="desktop  sm:flex sm:gap-5 sm:h-full ">
-                <div className="hidden sm:flex left w-1/5 h-full bg-white border border-b-[#d7d4d4] border-r-[#d7d4d4] border-l-[#d7d4d4] ">
+                <div className="hidden sm:flex sm:flex-col left w-1/5 h-full bg-white border border-b-[#d7d4d4] border-r-[#d7d4d4] border-l-[#d7d4d4] ">
                     <div className="title text-[26px] text-[#267376] text-right px-5 py-5 font-semibold   ">
                         Tin tức
                     </div>
