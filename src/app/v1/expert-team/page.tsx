@@ -104,10 +104,10 @@ const Expert = () => {
                                         </div>
                                     </div>
                                     <div className="contact flex gap-4 justify-end mt-auto items-center pt-1">
-                                        <div className="detail  text-sm font-semibold cursor-pointer text-[#444] border-[#444] border-[1px] py-1 px-3">
+                                        <div className="detail  text-sm font-semibold cursor-pointer text-[#444] border-[#444] border-[1px] py-1 px-3 hover:underline">
                                             Thông tin chi tiết
                                         </div>
-                                        <div className="schedule text-sm font-semibold cursor-pointer text-white border-[px] border-main-color py-1 px-3 bg-main-color ">
+                                        <div className="schedule text-sm font-semibold cursor-pointer text-white border-[px] border-main-color py-1 px-3 bg-main-color hover:underline  ">
                                             Đặt lịch khám
                                         </div>
                                     </div>
@@ -143,10 +143,10 @@ const Expert = () => {
                                         </div>
                                     </div>
                                     <div className="contact flex gap-4 justify-end mt-auto items-center pt-1">
-                                        <div className="detail  text-sm font-semibold cursor-pointer text-[#444] border-[#444] border-[1px] py-1 px-3">
+                                        <div className="detail  text-sm font-semibold cursor-pointer text-[#444] border-[#444] border-[1px] py-1 px-3 hover:underline">
                                             Thông tin chi tiết
                                         </div>
-                                        <div className="schedule text-sm font-semibold cursor-pointer text-white border-[px] border-main-color py-1 px-3 bg-main-color ">
+                                        <div className="schedule text-sm font-semibold cursor-pointer text-white border-[px] border-main-color py-1 px-3 bg-main-color hover:underline  ">
                                             Đặt lịch khám
                                         </div>
                                     </div>
@@ -182,10 +182,10 @@ const Expert = () => {
                                         </div>
                                     </div>
                                     <div className="contact flex gap-4 justify-end mt-auto items-center pt-1">
-                                        <div className="detail  text-sm font-semibold cursor-pointer text-[#444] border-[#444] border-[1px] py-1 px-3">
+                                        <div className="detail  text-sm font-semibold cursor-pointer text-[#444] border-[#444] border-[1px] py-1 px-3 hover:underline">
                                             Thông tin chi tiết
                                         </div>
-                                        <div className="schedule text-sm font-semibold cursor-pointer text-white border-[px] border-main-color py-1 px-3 bg-main-color ">
+                                        <div className="schedule text-sm font-semibold cursor-pointer text-white border-[px] border-main-color py-1 px-3 bg-main-color hover:underline  ">
                                             Đặt lịch khám
                                         </div>
                                     </div>
@@ -221,10 +221,10 @@ const Expert = () => {
                                         </div>
                                     </div>
                                     <div className="contact flex gap-4 justify-end mt-auto items-center pt-1">
-                                        <div className="detail  text-sm font-semibold cursor-pointer text-[#444] border-[#444] border-[1px] py-1 px-3">
+                                        <div className="detail  text-sm font-semibold cursor-pointer text-[#444] border-[#444] border-[1px] py-1 px-3 hover:underline">
                                             Thông tin chi tiết
                                         </div>
-                                        <div className="schedule text-sm font-semibold cursor-pointer text-white border-[px] border-main-color py-1 px-3 bg-main-color ">
+                                        <div className="schedule text-sm font-semibold cursor-pointer text-white border-[px] border-main-color py-1 px-3 bg-main-color hover:underline  ">
                                             Đặt lịch khám
                                         </div>
                                     </div>
