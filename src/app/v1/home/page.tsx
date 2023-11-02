@@ -74,7 +74,7 @@ const V1Home = () => {
 
       </div>
       {/* search bar */}
-      <div className="search-bar w-4/5 mx-auto rounded-full flex lg:hidden bg-[#f9f9f9] h-[70px] mb-5 flex items-center relative">
+      <div className="search-bar w-4/5 mx-auto rounded-full flex lg:hidden bg-[#f9f9f9] h-[70px] mb-5  items-center relative">
         <div className="main h-[60px] bg-[#009999] w-full flex items-center  border rounded-full ">
           <input type="text" className='h-[50px] mx-[4px] px-7 outline-none w-full  rounded-full border-[1px]' placeholder={t('search.placeHolder')} />
 
@@ -108,7 +108,7 @@ const V1Home = () => {
                     <div className="font-bold title text-sm text-center sm:text-start sm:text-base ">
                       {item.attributes.title}
                     </div>
-                    <div className="italic desc text-sm text-center sm:text-start sm:text-base hidden sm:flex
+                    <div className="italic desc text-sm text-center  hidden sm:flex
                     sm:text-sm
                     sm:py-2
                     sm:text-justify ">

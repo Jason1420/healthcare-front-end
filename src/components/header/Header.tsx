@@ -165,15 +165,10 @@ const Header = () => {
                 <div className="right justify-end items-center gap-5 flex">
 
 
-                    <div className="contact cursor-pointer hover:underline">
-                        {t('header.contactUs').toUpperCase()}
+                    <div className={`contact cursor-pointer hover:underline ${pathname == Endpoint.CONTACT ? "text-[#f68b1f] transition-colors" : ""}`}>
+                        <Link href={Endpoint.CONTACT}> {t('header.contactUs').toUpperCase()}</Link>
                     </div>
-                    <div className="location cursor-pointer hover:underline">
-                        {t('header.location').toUpperCase()}
-                    </div>
-                    <div className="question  cursor-pointer hover:underline">
-                        {t('header.question').toUpperCase()}
-                    </div>
+
                     <div className=" relative language cursor-pointer h-[38px] bg-[#555] flex items-center px-2 gap-1 hover:underline"
                         onClick={() => handleShowDropLng()}>
                         <div className="">

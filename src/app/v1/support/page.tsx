@@ -28,7 +28,7 @@ const Support = () => {
                     {t('title')}
                 </div>
                 <div className="search-bar flex ">
-                    <input className='border border-[2px] border-[#01acb9] outline-none h-[50px] w-[550px] px-5 rounded-bl-md rounded-tl-md' type="text" placeholder={t('placeHolder')} />
+                    <input className=' border-[2px] border-[#01acb9] outline-none h-[50px] w-[550px] px-5 rounded-bl-md rounded-tl-md' type="text" placeholder={t('placeHolder')} />
                     <div className="icon-search h-[50px] w-[50px] flex items-center bg-[#01acb9]  text-white text-3xl  justify-center rounded-br-md rounded-tr-md cursor-pointer">
                         <AiOutlineSearch />
                     </div>

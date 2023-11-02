@@ -6,4 +6,5 @@ export const Endpoint = {
     PRODUCTS: "/v1/products",
     NEWS: "/v1/news",
     SUPPORT: "/v1/support",
+    CONTACT: "/v1/contact",
 }
