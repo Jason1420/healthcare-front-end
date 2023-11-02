@@ -23,20 +23,20 @@ const Support = () => {
     return (
         <div className=" support-page w-full 
          mx-auto ">
-            <div className="top h-[200px] flex flex-col justify-center items-center gap-4 ">
-                <div className="title text-3xl">
+            <div className="top h-[200px] flex flex-col justify-center sm:items-center gap-4 ">
+                <div className="title text-xl text-center sm:text-3xl">
                     {t('title')}
                 </div>
                 <div className="search-bar flex ">
-                    <input className=' border-[2px] border-[#01acb9] outline-none h-[50px] w-[550px] px-5 rounded-bl-md rounded-tl-md' type="text" placeholder={t('placeHolder')} />
-                    <div className="icon-search h-[50px] w-[50px] flex items-center bg-[#01acb9]  text-white text-3xl  justify-center rounded-br-md rounded-tr-md cursor-pointer">
+                    <input className=' border-[2px] border-[#01acb9] outline-none h-[50px] w-full sm:w-[550px] px-5 rounded-bl-md rounded-tl-md' type="text" placeholder={t('placeHolder')} />
+                    <div className="icon-search h-[50px] w-[20%] sm:w-[50px] flex items-center bg-[#01acb9]  text-white text-3xl  justify-center rounded-br-md rounded-tr-md cursor-pointer">
                         <AiOutlineSearch />
                     </div>
                 </div>
             </div>
             <div className="bottom w-4/5 flex flex-1 mx-auto flex-wrap justify-center gap-y-8 mb-10">
                 {/* support online */}
-                <div className="card w-[22%] h-[200px]  flex justify-center items-center gap-2 flex-col hover:text-main-color cursor-pointer transition-all">
+                <div className="card sm:w-[22%] h-[200px]  flex justify-center items-center gap-2 flex-col hover:text-main-color cursor-pointer transition-all">
                     <Image className='gif w-3/5 mx-auto hidden' src={onlineGif} alt='support poliCy' />
                     <Image className='png w-1/3 mx-auto ' src={onlinePng} alt='support online' />
                     <div className="support-title text-xl text-center ">
@@ -44,7 +44,7 @@ const Support = () => {
                     </div>
                 </div>
                 {/* policy */}
-                <div className="card w-[22%] h-[200px]  flex justify-center items-center gap-2 flex-col hover:text-main-color cursor-pointer transition-all">
+                <div className="card sm:w-[22%] h-[200px]  flex justify-center items-center gap-2 flex-col hover:text-main-color cursor-pointer transition-all">
                     <Image className='gif w-3/5 mx-auto hidden' src={poliCyGif} alt='support poliCy' />
                     <Image className='png w-1/3 mx-auto ' src={poliCyPng} alt='support online' />
                     <div className="support-title text-xl text-center ">
@@ -52,7 +52,7 @@ const Support = () => {
                     </div>
                 </div>
                 {/* Ratting */}
-                <div className="card w-[22%] h-[200px]  flex justify-center items-center gap-2 flex-col hover:text-main-color cursor-pointer transition-all">
+                <div className="card sm:w-[22%] h-[200px]  flex justify-center items-center gap-2 flex-col hover:text-main-color cursor-pointer transition-all">
                     <Image className='gif w-3/5 mx-auto hidden' src={ratingGif} alt='support poliCy' />
                     <Image className='png w-1/3 mx-auto ' src={ratingPng} alt='support online' />
                     <div className="support-title text-xl text-center ">
@@ -60,7 +60,7 @@ const Support = () => {
                     </div>
                 </div>
                 {/* report issues */}
-                <div className="card w-[22%] h-[200px]  flex justify-center items-center gap-2 flex-col hover:text-main-color cursor-pointer transition-all">
+                <div className="card sm:w-[22%] h-[200px]  flex justify-center items-center gap-2 flex-col hover:text-main-color cursor-pointer transition-all">
                     <Image className='gif w-3/5 mx-auto hidden' src={warningGif} alt='support poliCy' />
                     <Image className='png w-1/3 mx-auto ' src={warningPng} alt='support online' />
                     <div className="support-title text-xl text-center ">
@@ -68,7 +68,7 @@ const Support = () => {
                     </div>
                 </div>
                 {/* FAQ */}
-                <div className="card w-[22%] h-[200px]  flex justify-center items-center gap-2 flex-col hover:text-main-color cursor-pointer transition-all">
+                <div className="card sm:w-[22%] h-[200px]  flex justify-center items-center gap-2 flex-col hover:text-main-color cursor-pointer transition-all">
                     <Image className='gif w-3/5 mx-auto hidden' src={faqGif} alt='support poliCy' />
                     <Image className='png w-1/3 mx-auto ' src={faqPng} alt='support online' />
                     <div className="support-title text-xl text-center ">
@@ -76,7 +76,7 @@ const Support = () => {
                     </div>
                 </div>
                 {/* Document */}
-                <div className="card w-[22%] h-[200px]  flex justify-center items-center gap-2 flex-col hover:text-main-color cursor-pointer transition-all">
+                <div className="card sm:w-[22%] h-[200px]  flex justify-center items-center gap-2 flex-col hover:text-main-color cursor-pointer transition-all">
                     <Image className='gif w-3/5 mx-auto hidden' src={documentGif} alt='support poliCy' />
                     <Image className='png w-1/3 mx-auto ' src={documentPng} alt='support online' />
                     <div className="support-title text-xl text-center ">
@@ -84,7 +84,7 @@ const Support = () => {
                     </div>
                 </div>
                 {/* calendar */}
-                <div className="card w-[22%] h-[200px]  flex justify-center items-center gap-2 flex-col hover:text-main-color cursor-pointer transition-all">
+                <div className="card sm:w-[22%] h-[200px]  flex justify-center items-center gap-2 flex-col hover:text-main-color cursor-pointer transition-all">
                     <Image className='gif w-3/5 mx-auto hidden' src={calendarGif} alt='support poliCy' />
                     <Image className='png w-1/3 mx-auto ' src={calendarPng} alt='support online' />
                     <div className="support-title text-xl text-center ">
