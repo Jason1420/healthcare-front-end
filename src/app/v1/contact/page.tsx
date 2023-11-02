@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next'
 const Support = () => {
     const { t } = useTranslation('contact');
     return (
-        <div className=" support-page flex flex-col sm:flex-row py-10 mx-auto  sm:w-4/5 ">
+        <div className=" support-page flex flex-col gap-5 sm:flex-row py-10 mx-auto  sm:w-4/5 ">
 
             <div className="left sm:w-[50%] text-center sm:text-start">
                 <div className="title text-xl mb-3">
