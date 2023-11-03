@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { useState } from 'react'
 import axios from 'axios'
 import { CMSToken } from '@/constant/CMSToken'
 import useSWR from 'swr'
@@ -12,6 +12,9 @@ export default function ServicesLayout({
 }: {
     children: React.ReactNode
 }) {
+    const [ShowRegister, isShowRegister] = useState<boolean>(false)
+    const [ShowConsult, isShowConsult] = useState<boolean>(false)
+
     const params = useParams()
     const fetchWithToken = (url: string, token: string) =>
         axios
@@ -40,7 +43,14 @@ export default function ServicesLayout({
 
                 </div>
 
+                <div className="regis flex justify-center border py-3 mb-4 mt-8 mx-2 bg-[#15a082] text-white rounded-lg font-semibold cursor-pointer hover:text-xl hover:bg-opacity-80 hover:text-[#444] transition-all">
+                    Đăng ký ngay
+                </div>
+                <div className="regis flex mb-5 justify-center font-semibold border py-3 my-2 mx-2 bg-[#15a082] text-white rounded-lg cursor-pointer hover:text-xl hover:bg-opacity-80 hover:text-[#444] transition-all">
+                    Tư vấn ngay
+                </div>
             </div>
+
             {children}
         </div>
     )

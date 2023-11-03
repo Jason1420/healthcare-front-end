@@ -18,10 +18,12 @@ export default function V1Layout({
                 <div className="mt-12 lg:mt-[38px] fixed z-40 w-full bg-white">
                     <Navbar />
                 </div>
-                <div className=" sm:mt-[144px]">
+                <div className="min-h-[100vh] sm:mt-[144px]">
                     {children}
                 </div>
-                <Footer />
+                <div className="mt-auto">
+                    <Footer />
+                </div>
             </div>
         </>
     )
