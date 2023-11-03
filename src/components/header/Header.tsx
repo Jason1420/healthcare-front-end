@@ -15,6 +15,8 @@ import './Header.scss'
 import Link from 'next/link'
 import { Endpoint } from '@/routes/Route'
 import { usePathname } from 'next/navigation'
+import logoMobile from '@/assets/logo-mobile.png'
+import Image from 'next/image'
 const Header = () => {
     const { i18n, t } = useTranslation('home')
     const currentLanguage = locales[i18n.language as keyof typeof locales]
@@ -28,16 +30,19 @@ const Header = () => {
     const pathname = usePathname()
     return (
         <div className=' header-container flex items-center justify-between px-2 h-12 bg-gray-header text-white 
-        lg:bg-[#313334]
-        lg:h-[38px]
-        lg:text-[#ddd]
-        lg:text-[11px]
-        lg: border-t-[1px]
-        lg: border-orange-400
+        fixed
+        z-50
+        w-full
+        sm:bg-[#313334]
+        sm:h-[38px]
+        sm:text-[#ddd]
+        sm:text-[11px]
+        sm: border-t-[1px]
+        sm: border-orange-400
           '>
             {/* --- mobile --- */}
             {/* menu */}
-            <label className="menu lg:hidden" htmlFor='show-navbar'>
+            <label className="menu sm:hidden" htmlFor='show-navbar'>
                 <svg xmlns="http://www.w3.org/2000/svg" className="ionicon w-8 h-8" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeMiterlimit="10" strokeWidth="48" d="M88 152h336M88 256h336M88 360h336" /></svg>
             </label>
             <input type="checkbox" id='show-navbar' hidden className='input-nav' />
@@ -123,7 +128,7 @@ const Header = () => {
 
                 </div>
                 {dropdownLng &&
-                    <ul className='px-12 mt-[-5px]'>
+                    <ul className='px-12 mt-[-5px] '>
                         <li>
                             <div className={currentLanguage === "English" ? "text-[#f68b1f] transition-colors" : ""}
                                 onClick={() => changeLanguage("en")}>English</div>
@@ -137,22 +142,28 @@ const Header = () => {
             </div>
 
             {/* logo */}
-            <div className="logo lg:hidden">
-                <Link href={Endpoint.HOME}> Healthcare App</Link>
-            </div>
+            <Link href={Endpoint.HOME}>
+                <div className="logo sm:hidden flex">
+
+                    <Image className='h-8 w-8 ' src={logoMobile} alt='logo-mobile' />
+                    <div className="title my-auto">
+                        Healthcare App
+                    </div>
+                </div>
+            </Link>
             {/* search */}
-            <div className="search text-[32px] lg:hidden">
+            <div className="search text-[32px] sm:hidden">
                 <AiOutlineSearch />
             </div>
 
             {/* --- desktop --- */}
             <div className="desktop hidden
-            lg:w-4/5
-            lg:mx-auto
-            lg:flex
-            lg: justify-between
-            lg: gap-5
-            lg: items-center">
+            sm:w-4/5
+            sm:mx-auto
+            sm:flex
+            sm: justify-between
+            sm: gap-5
+            sm: items-center">
                 <div className="left flex justify-start gap-5">
                     <div className="email text-xs">
                         <label className='mr-1  text-[13px]  opacity-80' htmlFor="">
@@ -187,13 +198,14 @@ const Header = () => {
                         <div className="">
                             <AiFillCaretDown />
                         </div>
-                        {dropdownLng &&
+                        {dropdownLng ?
                             <div className='absolute top-[38px] w-[89px] left-0 px-3 text-[13px] text-white bg-[#555] flex flex-col gap-2 py-2 '>
-                                <div className="eng hover:underline hover:text-orange-400 transition-colors"
+                                <div className="eng hover:underline hover:text-orange-400  transition-colors"
                                     onClick={() => changeLanguage("en")}>English</div>
-                                <div className="vi hover:underline hover:text-orange-400 transition-colors"
+                                <div className="vi hover:underline hover:text-orange-400  transition-colors"
                                     onClick={() => changeLanguage("vi")}>Tiếng Việt</div>
                             </div>
+                            : null
                         }
                     </div>
                     <div className="search h-[38px] w-[38px] cursor-pointer bg-orange-400 text-3xl  flex items-center justify-center">

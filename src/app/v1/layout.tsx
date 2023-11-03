@@ -11,10 +11,16 @@ export default function V1Layout({
 }) {
     return (
         <>
-            <div className=" font-Noto flex flex-col ">
-                <Header />
-                <Navbar />
-                {children}
+            <div className=" font-Noto flex flex-col">
+                <div className="z-50 fixed">
+                    <Header />
+                </div>
+                <div className="mt-12 lg:mt-[38px] fixed z-40 w-full bg-white">
+                    <Navbar />
+                </div>
+                <div className=" sm:mt-[144px]">
+                    {children}
+                </div>
                 <Footer />
             </div>
         </>

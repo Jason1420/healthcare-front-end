@@ -1,11 +1,11 @@
 'use client'
 import React from 'react'
 
-const Expert = () => {
+const V1 = () => {
     return (
         <div className=" font-Noto flex flex-col ">
         </div>
     )
 }
 
-export default Expert
+export default V1
