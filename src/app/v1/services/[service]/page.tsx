@@ -17,7 +17,7 @@ const page = () => {
         ([url, token]) => fetchWithToken(url, token))
 
     return (
-        <div className="right min-h-[100vh] w-4/5 mx-auto flex justify-around flex-wrap gap-y-4 text-[#393939] pt-7 pb-10">
+        <div className="right  w-4/5 mx-auto flex justify-around flex-wrap gap-y-4 text-[#393939] pt-7 pb-10">
             {data ?
                 <div className='data'>
                     <div className="detail" dangerouslySetInnerHTML={{ __html: data?.data[0].attributes.detail }}>

@@ -24,6 +24,7 @@ export default function V1Layout({
                 <div className="mt-auto">
                     <Footer />
                 </div>
+
             </div>
         </>
     )
