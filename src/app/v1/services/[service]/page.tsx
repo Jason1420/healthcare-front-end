@@ -15,9 +15,9 @@ const page = () => {
     console.log(`${ApiURL.getAllServices}&filters[slug]=${params.service}`)
     const { data, error, isLoading } = useSWR([`${ApiURL.getAllServices}&filters[slug]=${params.service}`, CMSToken],
         ([url, token]) => fetchWithToken(url, token))
-    console.log(data?.data[0].attributes.detail)
+
     return (
-        <div className="right  w-4/5 mx-auto flex justify-around flex-wrap gap-y-4 text-[#393939] pt-7 pb-10">
+        <div className="right min-h-[100vh] w-4/5 mx-auto flex justify-around flex-wrap gap-y-4 text-[#393939] pt-7 pb-10">
             {data ?
                 <div className='data'>
                     <div className="detail" dangerouslySetInnerHTML={{ __html: data?.data[0].attributes.detail }}>

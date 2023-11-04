@@ -26,6 +26,18 @@
     border-color: #555;
     box-shadow: none;
 }
+
+.input-regis-form:checked ~ .overplay-regis,
+.input-regis-form:checked ~ .regis-form {
+    display: flex;
+}
+.input-consult-form:checked ~ .overplay-consult,
+.input-consult-form:checked ~ .consult-form {
+    display: flex;
+}
+.custom-scrollbar > div {
+    margin: 0;
+}
 .image {
     img {
         height: 100%;

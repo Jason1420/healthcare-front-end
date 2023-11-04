@@ -29,6 +29,11 @@ const Navbar = () => {
                             {t('navbar.service')}
                         </Link>
                     </div>
+                    <div className={` news cursor-pointer ${pathname.startsWith(Endpoint.NEWS) ? "text-[#f68b1f] transition-colors" : ""}`}>
+                        <Link href={Endpoint.NEWS}>
+                            {t('navbar.news')}
+                        </Link>
+                    </div>
                     <div className={` expertTeam cursor-pointer ${pathname.startsWith(Endpoint.EXPERT_TEAM) ? "text-[#f68b1f] transition-colors" : ""}`}>
                         <Link href={Endpoint.EXPERT_TEAM}>
                             {t('navbar.expertTeam')}
@@ -39,11 +44,7 @@ const Navbar = () => {
                             {t('navbar.products')}
                         </Link>
                     </div>
-                    <div className={` news cursor-pointer ${pathname.startsWith(Endpoint.NEWS) ? "text-[#f68b1f] transition-colors" : ""}`}>
-                        <Link href={Endpoint.NEWS}>
-                            {t('navbar.news')}
-                        </Link>
-                    </div>
+
                     <div className={` support cursor-pointer ${pathname.startsWith(Endpoint.SUPPORT) ? "text-[#f68b1f] transition-colors" : ""}`}>
                         <Link href={Endpoint.SUPPORT}>
                             {t('navbar.support')}

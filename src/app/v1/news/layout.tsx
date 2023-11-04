@@ -22,7 +22,7 @@ export default function NewsLayout({
 
     return (
         <div className="desktop  sm:flex sm:gap-5 sm:h-full sm:w-4/5 mx-auto">
-            <div className="hidden sm:flex sm:flex-col left w-1/5 h-full bg-white border border-b-[#d7d4d4] border-r-[#d7d4d4] border-l-[#d7d4d4] ">
+            <div className="hidden min-h-[100vh] sm:flex sm:flex-col left w-1/5 h-full bg-white border border-b-[#d7d4d4] border-r-[#d7d4d4] border-l-[#d7d4d4] ">
                 <div className="title text-[26px] text-[#267376] text-right px-5 py-5 font-semibold   ">
                     Tin tức
                 </div>
