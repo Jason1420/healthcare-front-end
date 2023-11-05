@@ -58,7 +58,7 @@ const V1Home = () => {
             <div className="icon text-[28px] sm:text-[5vw] text-[#009999]">
               <BsCalendar2Minus />
             </div>
-            <div className="title text-[16px] sm:text-xl  lg:text-2xl">
+            <div className="title text-[16px] sm:text-xl  sm:text-2xl">
               {t("mainService.schedule")}
             </div>
           </div>
@@ -66,7 +66,7 @@ const V1Home = () => {
             <div className="icon text-[28px] sm:text-[5vw] text-[#009999]">
               <LuStethoscope />
             </div>
-            <div className="title text-[16px] sm:text-xl  min-w-[320px]:text-[12px] lg:text-2xl">
+            <div className="title text-[16px] sm:text-xl  min-w-[320px]:text-[12px] sm:text-2xl">
               {t("mainService.searchDoctor")}
             </div>
           </div>
@@ -74,7 +74,7 @@ const V1Home = () => {
 
       </div>
       {/* search bar */}
-      <div className="search-bar w-4/5 mx-auto rounded-full flex lg:hidden bg-[#f9f9f9] h-[70px] mb-5  items-center relative">
+      <div className="search-bar w-4/5 mx-auto rounded-full flex sm:hidden bg-[#f9f9f9] h-[70px] mb-5  items-center relative">
         <div className="main h-[60px] bg-[#009999] w-full flex items-center  border rounded-full ">
           <input type="text" className='h-[50px] mx-[4px] px-7 outline-none w-full  rounded-full border-[1px]' placeholder={t('search.placeHolder')} />
 

@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next'
 const SearchBar = () => {
     const { t } = useTranslation('home')
     return (
-        <div className='hidden search-bar-container h-20 bg-[#1EB9C4] lg:flex justify-center items-center gap-4'>
+        <div className='hidden search-bar-container h-20 bg-[#1EB9C4] sm:flex justify-center items-center gap-4'>
             <div className="title text-white text-xl font-bold">
                 {t('search.title')}
             </div>

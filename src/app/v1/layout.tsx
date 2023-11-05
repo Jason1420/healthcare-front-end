@@ -15,10 +15,10 @@ export default function V1Layout({
                 <div className="z-50 fixed">
                     <Header />
                 </div>
-                <div className="mt-12 lg:mt-[38px] fixed z-40 w-full bg-white">
+                <div className="mt-12 sm:mt-[38px] fixed z-40 w-full bg-white">
                     <Navbar />
                 </div>
-                <div className="min-h-[100full] h-full sm:mt-[144px]">
+                <div className="min-h-[100full] h-full sm:mt-[133px]">
                     {children}
                 </div>
                 <div className="mt-auto">

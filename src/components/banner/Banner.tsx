@@ -21,9 +21,9 @@ const Banner = () => {
     return (
         <div className='banner-container overflow-hidden '>
             <Slider {...setting} className=''>
-                <Image className='lg:h-[500px] lg:w-9/10 lg:mx-auto bg-cover' src={banner1} alt="logo" />
-                <Image className='lg:h-[500px] lg:w-9/10 lg:mx-auto bg-cover' src={banner2} alt="logo" />
-                <Image className='lg:h-[500px] lg:w-9/10 lg:mx-auto bg-cover' src={banner3} alt="logo" />
+                <Image className='sm:h-[500px] sm:w-9/10 sm:mx-auto bg-cover' src={banner1} alt="logo" />
+                <Image className='sm:h-[500px] sm:w-9/10 sm:mx-auto bg-cover' src={banner2} alt="logo" />
+                <Image className='sm:h-[500px] sm:w-9/10 sm:mx-auto bg-cover' src={banner3} alt="logo" />
             </Slider>
         </div>
     )
