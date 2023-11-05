@@ -13,10 +13,8 @@ const page = () => {
         axios
             .get(url, { headers: { Authorization: "Bearer " + token } })
             .then((res) => res.data);
-    console.log(`${ApiURL.getAllServices}&filters[slug]=${params.service}`)
     const { data, error, isLoading } = useSWR([`${ApiURL.getAllServices}&filters[slug]=${params.service}`, CMSToken],
         ([url, token]) => fetchWithToken(url, token))
-    console.log(data?.data[0].attributes.detail)
 
     return (
         <div className="right  w-4/5 mx-auto flex flex-col flex-wrap gap-y-4 text-[#393939] pt-7 pb-10">

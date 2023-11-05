@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import axios from 'axios'
 import { CMSToken } from '@/constant/CMSToken'
 import useSWR from 'swr'
@@ -11,6 +11,9 @@ import { FaTimes } from 'react-icons/fa'
 import CustomScrollbars from '@/components/CustomScrollbars/CustomScrollbars'
 import { SelectOption } from '@/types/SelectOption'
 import SelectComponent from '@/components/SelectComponent/SelectComponent'
+import { RegisterForm } from '@/@types/registerForm'
+import { ToastContainer, toast } from 'react-toastify'
+
 export default function ServicesLayout({
     children,
 }: {
@@ -27,9 +30,9 @@ export default function ServicesLayout({
 
     //Custom select component
     const [service, setService] = useState<SelectOption[]>([])
-    const [serviceSelected, setProvinceSelected] = useState<SelectOption | undefined>({ name: "Chọn dịch vụ", id: 0 });
+    const [serviceSelected, setServiceSelected] = useState<SelectOption | undefined>({ name: "Chọn dịch vụ", id: 0 });
     const handleOnChangeService = (o: SelectOption | undefined) => {
-        setProvinceSelected(o)
+        setServiceSelected(o)
     }
     useEffect(() => {
         data?.data.map((data: any, index: number) => {
@@ -39,6 +42,32 @@ export default function ServicesLayout({
             }])
         })
     }, [data])
+
+    // Register form
+    const initRegisterInfo: RegisterForm = {
+        fullName: "",
+        phone: "",
+        email: "",
+        note: "",
+        address: "hcm",
+        service: null
+    }
+    const [registerInfo, setRegisterInfo] = useState<RegisterForm>(initRegisterInfo)
+    useEffect(() => {
+        setRegisterInfo({ ...registerInfo, service: data?.data.find((data: any) => data.attributes.title === serviceSelected?.name) })
+    }, [serviceSelected])
+
+    const createARegisterForm = async () => {
+        const res = await axios.post(ApiURL.ApiRegisterForm, { data: registerInfo }, { headers: { Authorization: "Bearer " + CMSToken } })
+        if (res.status == 200) {
+            setRegisterInfo(initRegisterInfo)
+            setServiceSelected({ name: "Chọn dịch vụ", id: 0 })
+            toast.success("Đăng ký thành công", {
+                icon: "✔️"
+            });
+        }
+    }
+
     return (
         <div className="desktop relative ">
             <div className="sm:w-4/5 sm:flex sm:gap-5 sm:h-full min-h-[100vh] mx-auto">
@@ -69,7 +98,6 @@ export default function ServicesLayout({
                     </label>
 
                 </div>
-
                 {children}
             </div>
             {/* Form register */}
@@ -86,23 +114,23 @@ export default function ServicesLayout({
                         <FaTimes />
                     </label>
                     <div className="info flex flex-col gap-2 mt-5 w-[90%] mx-auto mb-4">
-                        <input type="text" className="full-name  border border-[#444] focus:outline-main-color  rounded-md py-2 pl-3" placeholder='Họ và tên*' />
-                        <input type="tel" className="phone  border border-[#444] focus:outline-main-color  rounded-md py-2 pl-3" placeholder='Số điện thoại*' />
-                        <input type="email" className="email  border border-[#444] focus:outline-main-color  rounded-md py-2 pl-3" placeholder='Email*' />
+                        <input type="text" className="full-name  border border-[#444] focus:outline-main-color  rounded-md py-2 pl-3" placeholder='Họ và tên*' value={registerInfo.fullName} onChange={(event) => setRegisterInfo({ ...registerInfo, fullName: event.target.value })} />
+                        <input type="tel" className="phone  border border-[#444] focus:outline-main-color  rounded-md py-2 pl-3" placeholder='Số điện thoại*' value={registerInfo.phone} onChange={(event) => setRegisterInfo({ ...registerInfo, phone: event.target.value })} />
+                        <input type="email" className="email  border border-[#444] focus:outline-main-color  rounded-md py-2 pl-3" placeholder='Email* ' value={registerInfo.email} onChange={(event) => setRegisterInfo({ ...registerInfo, email: event.target.value })} />
                         <div className="address">
                             Địa chỉ sử dụng dịch vụ
                         </div>
                         <div className="address-detail flex justify-center gap-5 ">
                             <div className="input-radio flex items-center gap-1 text-base">
-                                <input type="radio" name='address' />
+                                <input type="radio" name='address' defaultChecked onClick={() => setRegisterInfo({ ...registerInfo, address: "hcm" })} />
                                 <label htmlFor="address"> TP.Hồ Chí Minh</label>
                             </div>
                             <div className="input-radio flex items-center gap-1 text-base">
-                                <input type="radio" name='address' />
+                                <input type="radio" name='address' onClick={() => setRegisterInfo({ ...registerInfo, address: "hanoi" })} />
                                 <label htmlFor="address"> Hà Nội</label>
                             </div>
                             <div className="input-radio flex items-center gap-1 text-base">
-                                <input type="radio" name='address' />
+                                <input type="radio" name='address' onClick={() => setRegisterInfo({ ...registerInfo, address: "khac" })} />
                                 <label htmlFor="address"> Khác</label>
                             </div>
                         </div>
@@ -113,10 +141,11 @@ export default function ServicesLayout({
                         <div className="note">
                             Lời nhắn
                         </div>
-                        <textarea className="u-content w-full border-black border-[1px] py-2 rounded-md px-4 h-[105px]" placeholder="Nhập lời nhắn (nếu có)" />
-                        <div className="submit border bg-main-color w-2/5 py-2 text-center text-white rounded-md ">
-                            Gửi yêu cầu
-                        </div>
+                        <textarea className="u-content w-full border-black border-[1px] py-2 rounded-md px-4 h-[105px] cursor-pointer" placeholder="Nhập lời nhắn (nếu có)" value={registerInfo.note} onChange={(event) => setRegisterInfo({ ...registerInfo, note: event.target.value })} />
+                        <label htmlFor="show-regis-form" className="submit border bg-main-color w-2/5 py-2 text-center text-white rounded-md "
+                            onClick={() => createARegisterForm()}>
+                            Gửi đăng ký
+                        </label>
                     </div>
                 </CustomScrollbars>
             </div>
@@ -155,13 +184,25 @@ export default function ServicesLayout({
                             </div>
                         </div>
 
-                        <textarea className="u-content w-full border-black border-[1px] py-2 rounded-md px-4 h-[105px]" placeholder="Nhập lời nhắn (nếu có)" />
+                        <textarea className="u-content w-full border-black border-[1px] py-2 rounded-md px-4 h-[105px] cursor-pointer" placeholder="Nhập lời nhắn (nếu có)" />
                         <div className="submit border bg-main-color w-2/5 py-2 text-center text-white rounded-md ">
                             Gửi Đăng Ký
                         </div>
                     </div>
                 </CustomScrollbars>
             </div>
+            <ToastContainer
+                position="top-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+            />
         </div >
     )
 }
