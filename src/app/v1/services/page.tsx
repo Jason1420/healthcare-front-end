@@ -19,6 +19,7 @@ const Services = () => {
             .then((res) => res.data);
     const { data, error, isLoading } = useSWR([ApiURL.getAllServices, CMSToken],
         ([url, token]) => fetchWithToken(url, token))
+    console.log(data)
     return (
         <div className="services-page w-full sm:w-4/5 
         h-full mx-auto  ">
