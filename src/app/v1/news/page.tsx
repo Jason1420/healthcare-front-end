@@ -70,11 +70,11 @@ const News = () => {
                     {data?.data.map((data: any, index: number) => {
                         return (
                             <div className="serv sm:w-[45%] flex flex-col gap-4 " key={index}>
-                                <div className="item text-[20px]">
+                                <div className="item text-[20px] h-[60px] overflow-hidden">
                                     {data.attributes.title}
                                 </div>
                                 <div className="img">
-                                    <Image className='max-h-[276px] object-fill' src={'http://localhost:1337' + data.attributes.thumbnail.data.attributes.url} alt='thumbnail'
+                                    <Image className='max-h-[276px] object-fill' src={data.attributes.thumbnail.data.attributes.url} alt='thumbnail'
                                         width={data.attributes.thumbnail.data.attributes.width} height={data.attributes.thumbnail.data.attributes.height} />
                                 </div>
                                 <div className="desc text-base text-[#666]">

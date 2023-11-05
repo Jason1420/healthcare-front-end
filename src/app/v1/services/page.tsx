@@ -68,7 +68,7 @@ const Services = () => {
                     {data?.data.map((data: any, index: number) => {
                         return (
                             <div className="serv sm:w-[45%] flex flex-col gap-4 " key={index}>
-                                <div className="item text-[20px]">
+                                <div className="item text-[20px] h-[60px] overflow-hidden">
                                     {data.attributes.title}
                                 </div>
                                 <div className="img">
