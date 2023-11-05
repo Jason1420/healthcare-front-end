@@ -5,7 +5,6 @@ import axios from 'axios'
 import useSWR from 'swr'
 import { ApiURL } from '@/routes/ApiUrl'
 import { CMSToken } from '@/constant/CMSToken'
-import { marked } from 'marked';
 const page = () => {
     const params = useParams()
     console.log(params.service)

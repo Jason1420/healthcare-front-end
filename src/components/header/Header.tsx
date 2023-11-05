@@ -51,7 +51,7 @@ const Header = () => {
                 <label className='times ml-auto mr-[-15px] py-2 w-10' htmlFor="show-navbar">
                     <FaTimes />
                 </label>
-                <div className={`px-[5px] sidebar-mobile__item flex items-center gap-[6px] ${pathname == Endpoint.INTRODUCTION ? "text-[#f68b1f] transition-colors" : ""}`}>
+                <div className={`px-[5px] sidebar-mobile__item flex items-center gap-[6px] ${pathname.startsWith(Endpoint.INTRODUCTION) ? "text-[#f68b1f] transition-colors" : ""}`}>
                     <div className="img ">
                         <AiOutlineExclamationCircle />
                     </div>
@@ -61,7 +61,7 @@ const Header = () => {
                     </div>
                 </div>
 
-                <div className={`px-[5px] sidebar-mobile__item flex items-center gap-[6px] ${pathname == Endpoint.SERVICES ? "text-[#f68b1f] transition-colors" : ""}`}>
+                <div className={`px-[5px] sidebar-mobile__item flex items-center gap-[6px] ${pathname.startsWith(Endpoint.SERVICES) ? "text-[#f68b1f] transition-colors" : ""}`}>
                     <div className="img call-item">
                         <RiServiceLine />
                     </div>
@@ -70,7 +70,7 @@ const Header = () => {
                         <Link href={Endpoint.SERVICES}>{t('navbar.service')}</Link>
                     </div>
                 </div>
-                <div className={`px-[5px] sidebar-mobile__item flex items-center gap-[6px] ${pathname == Endpoint.EXPERT_TEAM ? "text-[#f68b1f] transition-colors" : ""}`}>
+                <div className={`px-[5px] sidebar-mobile__item flex items-center gap-[6px] ${pathname.startsWith(Endpoint.EXPERT_TEAM) ? "text-[#f68b1f] transition-colors" : ""}`}>
                     <div className="img">
                         <GiHealing />
                     </div>
@@ -79,7 +79,7 @@ const Header = () => {
                         <Link href={Endpoint.EXPERT_TEAM}>{t('navbar.expertTeam')}</Link>
                     </div>
                 </div>
-                <div className={`px-[5px] sidebar-mobile__item flex items-center gap-[6px] ${pathname == Endpoint.PRODUCTS ? "text-[#f68b1f] transition-colors" : ""}`}>
+                <div className={`px-[5px] sidebar-mobile__item flex items-center gap-[6px] ${pathname.startsWith(Endpoint.PRODUCTS) ? "text-[#f68b1f] transition-colors" : ""}`}>
                     <div className="img">
                         <TbBrandProducthunt />
                     </div>
@@ -88,7 +88,7 @@ const Header = () => {
                         <Link href={Endpoint.PRODUCTS}>{t('navbar.products')}</Link>
                     </div>
                 </div>
-                <div className={`px-[5px] sidebar-mobile__item flex items-center gap-[6px] ${pathname == Endpoint.NEWS ? "text-[#f68b1f] transition-colors" : ""}`}>
+                <div className={`px-[5px] sidebar-mobile__item flex items-center gap-[6px] ${pathname.startsWith(Endpoint.NEWS) ? "text-[#f68b1f] transition-colors" : ""}`}>
                     <div className="img ">
                         <IoNewspaperOutline />
                     </div>
@@ -97,7 +97,7 @@ const Header = () => {
                         <Link href={Endpoint.NEWS}>{t('navbar.news')}</Link>
                     </div>
                 </div>
-                <div className={`px-[5px] sidebar-mobile__item flex items-center gap-[6px] ${pathname == Endpoint.SUPPORT ? "text-[#f68b1f] transition-colors" : ""}`}>
+                <div className={`px-[5px] sidebar-mobile__item flex items-center gap-[6px] ${pathname.startsWith(Endpoint.SUPPORT) ? "text-[#f68b1f] transition-colors" : ""}`}>
                     <div className="img">
                         <BiSupport />
                     </div>
@@ -106,7 +106,7 @@ const Header = () => {
                         <Link href={Endpoint.SUPPORT}>{t('navbar.support')}</Link>
                     </div>
                 </div>
-                <div className={`px-[5px] sidebar-mobile__item flex items-center gap-[6px] ${pathname == Endpoint.CONTACT ? "text-[#f68b1f] transition-colors" : ""}`}>
+                <div className={`px-[5px] sidebar-mobile__item flex items-center gap-[6px] ${pathname.startsWith(Endpoint.CONTACT) ? "text-[#f68b1f] transition-colors" : ""}`}>
                     <div className="img">
                         <MdOutlineContactSupport />
                     </div>
@@ -186,7 +186,7 @@ const Header = () => {
                 <div className="right justify-end items-center gap-5 flex">
 
 
-                    <div className={`contact cursor-pointer hover:underline ${pathname == Endpoint.CONTACT ? "text-[#f68b1f] transition-colors" : ""}`}>
+                    <div className={`contact cursor-pointer hover:underline ${pathname.startsWith(Endpoint.CONTACT) ? "text-[#f68b1f] transition-colors" : ""}`}>
                         <Link href={Endpoint.CONTACT}> {t('header.contactUs').toUpperCase()}</Link>
                     </div>
 

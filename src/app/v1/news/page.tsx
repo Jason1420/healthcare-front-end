@@ -26,47 +26,10 @@ const News = () => {
     return (
         <div className="services-page w-full sm:w-4/5 
         h-full mx-auto  ">
-            <div className="sm:hidden title mx-auto box-border border border-b-gray-300 w-full text-center font-bold py-2 text-xl h-[50px]">
-                Tin Tức
-            </div>
-            {/* Sidebar */}
-            {/* dich vu y te */}
-            <input type="checkbox" hidden id='dvyt' className='dvyt' />
-            <label htmlFor="dvyt" className="med-service sm:hidden bg-[#f1f1f1] text-lg px-3 border-b-gray-300 border flex justify-between h-[50px]">
-                <div className="title my-auto">
-                    Tin tức y tế
-                </div>
-                <div className="icon ml-auto my-auto pr-3">
-                    <PiCaretDownBold />
 
-                </div>
-            </label>
-            <div className="med-service-list hidden flex-wrap bg-[#555] justify-around gap-y-3 py-3">
-                <div className="serv-item w-[45%] bg-white rounded-sm px-4">Tin tức 1</div>
-                <div className="serv-item w-[45%] bg-white rounded-sm px-4">Tin tức 2</div>
-                <div className="serv-item w-[45%] bg-white rounded-sm px-4">Tin tức 3</div>
-                <div className="serv-item w-[45%] bg-white rounded-sm px-4">Tin tức 4</div>
-            </div>
-            {/* dv suc khoe */}
-            <input type="checkbox" hidden id='dvsk' className='dvsk' />
-            <label htmlFor="dvsk" className="health-service sm:hidden bg-[#f1f1f1] text-lg px-3 border-b-gray-300 border flex justify-between h-[50px]">
-                <div className="title my-auto ">
-                    Tin tức sức khỏe
-                </div>
-                <div className="icon ml-auto my-auto pr-3">
-                    <PiCaretDownBold />
-
-                </div>
-            </label>
-            <div className="health-service-list hidden flex-wrap bg-[#555] justify-around gap-y-3 py-3">
-                <div className="serv-item w-[45%] bg-white rounded-sm px-4">Tin tức 1</div>
-                <div className="serv-item w-[45%] bg-white rounded-sm px-4">Tin tức 2</div>
-                <div className="serv-item w-[45%] bg-white rounded-sm px-4">Tin tức 3</div>
-                <div className="serv-item w-[45%] bg-white rounded-sm px-4">Tin tức 4</div>
-            </div>
             {/* nội dung */}
             <div className="desktop  sm:flex sm:gap-5 sm:h-full ">
-                <div className="right w-[98%] mx-auto flex justify-between px-5 flex-wrap gap-y-4 text-[#393939] pt-7 pb-10">
+                <div className="right w-[98%] mx-auto  flex justify-between px-5 flex-wrap gap-y-4 text-[#393939] pt-7 pb-10">
                     {data?.data.map((data: any, index: number) => {
                         return (
                             <div className="serv sm:w-[45%] flex flex-col gap-4 " key={index}>

@@ -10,9 +10,10 @@ import useSWR from 'swr'
 import { ApiURL } from '@/routes/ApiUrl'
 import Link from 'next/link'
 import { Endpoint } from '@/routes/Route'
+import { useParams } from 'next/navigation'
 const Services = () => {
     // axios.defaults.headers.common['Authorization'] = `Bearer: ${CMSToken}`
-
+    const params = useParams()
     const fetchWithToken = (url: string, token: string) =>
         axios
             .get(url, { headers: { Authorization: "Bearer " + token } })
@@ -23,44 +24,8 @@ const Services = () => {
     return (
         <div className="services-page w-full sm:w-4/5 
         h-full mx-auto  ">
-            <div className="sm:hidden title mx-auto box-border border border-b-gray-300 w-full text-center font-bold py-2 text-xl h-[50px]">
-                Dịch Vụ
-            </div>
-            {/* Sidebar */}
-            {/* dich vu y te */}
-            <input type="checkbox" hidden id='dvyt' className='dvyt' />
-            <label htmlFor="dvyt" className="med-service sm:hidden bg-[#f1f1f1] text-lg px-3 border-b-gray-300 border flex justify-between h-[50px]">
-                <div className="title my-auto">
-                    Dịch vụ y tế
-                </div>
-                <div className="icon ml-auto my-auto pr-3">
-                    <PiCaretDownBold />
 
-                </div>
-            </label>
-            <div className="med-service-list hidden flex-wrap bg-[#555] justify-around gap-y-3 py-3">
-                <div className="serv-item w-[45%] bg-white rounded-sm px-4">Dịch vụ 1</div>
-                <div className="serv-item w-[45%] bg-white rounded-sm px-4">Dịch vụ 2</div>
-                <div className="serv-item w-[45%] bg-white rounded-sm px-4">Dịch vụ 3</div>
-                <div className="serv-item w-[45%] bg-white rounded-sm px-4">Dịch vụ 4</div>
-            </div>
-            {/* dv suc khoe */}
-            <input type="checkbox" hidden id='dvsk' className='dvsk' />
-            <label htmlFor="dvsk" className="health-service sm:hidden bg-[#f1f1f1] text-lg px-3 border-b-gray-300 border flex justify-between h-[50px]">
-                <div className="title my-auto ">
-                    Dịch vụ sức khỏe
-                </div>
-                <div className="icon ml-auto my-auto pr-3">
-                    <PiCaretDownBold />
 
-                </div>
-            </label>
-            <div className="health-service-list hidden flex-wrap bg-[#555] justify-around gap-y-3 py-3">
-                <div className="serv-item w-[45%] bg-white rounded-sm px-4">Dịch vụ 1</div>
-                <div className="serv-item w-[45%] bg-white rounded-sm px-4">Dịch vụ 2</div>
-                <div className="serv-item w-[45%] bg-white rounded-sm px-4">Dịch vụ 3</div>
-                <div className="serv-item w-[45%] bg-white rounded-sm px-4">Dịch vụ 4</div>
-            </div>
             {/* nội dung */}
             <div className="desktop sm:flex  sm:h-full">
 
@@ -82,7 +47,6 @@ const Services = () => {
                                     <Link href={`${Endpoint.SERVICES}/${data.attributes.slug}`}>TÌM HIỂU THÊM</Link>
                                 </div>
                             </div>
-                            // <Link  href={`${Endpoint.SERVICES}/${data.attributes.slug}`}>{data.attributes.title}</Link>
                         )
                     })}
 
