@@ -71,7 +71,7 @@ const Services = () => {
                                     {data.attributes.title}
                                 </div>
                                 <div className="img">
-                                    <Image src={'http://localhost:1337' + data.attributes.thumbnail.data.attributes.url} alt='thumbnail'
+                                    <Image src={data.attributes.thumbnail.data.attributes.url} alt='thumbnail'
                                         width={data.attributes.thumbnail.data.attributes.width} height={data.attributes.thumbnail.data.attributes.height} />
                                 </div>
                                 <div className="desc text-base text-[#666]">

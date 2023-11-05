@@ -7,7 +7,7 @@ const nextConfig = {
         remotePatterns: [
             {
                 protocol: 'https',
-                hostname: 'healthcare-cms.onrender.com',
+                hostname: 'res.cloudinary.com/deg7emghq/image',
                 pathname: '/uploads/**',
             },
         ],
