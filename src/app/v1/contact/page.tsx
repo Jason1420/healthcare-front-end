@@ -16,7 +16,7 @@ const Support = () => {
 
 
                     <div className="address text-base">
-                        {t('address')}: <span className='pl-2'>4060 Stanley Avenue, Levittown, New York, US</span>
+                        {t('address')}: <span className='pl-2'>292 Ung Văn Khiêm, Phường 25, Bình Thạnh, Thành phố Hồ Chí Minh</span>
                     </div>
                     <div className="phone text-base">
                         {t('phone')}:
