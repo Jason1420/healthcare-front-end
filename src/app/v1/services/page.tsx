@@ -64,7 +64,7 @@ const Services = () => {
             {/* nội dung */}
             <div className="desktop sm:flex  sm:h-full">
 
-                <div className="right w-[98%] mx-auto flex justify-around flex-wrap gap-y-4 text-[#393939] pt-7 pb-10">
+                <div className="right w-[98%] mx-auto flex justify-between px-5 flex-wrap gap-y-4 text-[#393939] pt-7 pb-10">
                     {data?.data.map((data: any, index: number) => {
                         return (
                             <div className="serv sm:w-[45%] flex flex-col gap-4 " key={index}>
