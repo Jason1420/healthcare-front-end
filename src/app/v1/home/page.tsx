@@ -101,7 +101,7 @@ const V1Home = () => {
 
                 <div className="content flex-col sm:flex-row flex gap-2 ">
                   <div className="image mx-auto sm:mx-0 ">
-                    <Image src={'http://localhost:1337' + item?.attributes.thumbnail.data.attributes.formats.thumbnail.url} alt='thumbnail'
+                    <Image src={item?.attributes.thumbnail.data.attributes.formats.thumbnail.url} alt='thumbnail'
                       width={156} height={156} />
                   </div>
                   <div className=" w-full sm:w-4/5 sm:mx-4">
