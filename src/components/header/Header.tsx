@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import menuIcon from '@/public/menu.svg'
 import { AiOutlineSearch, AiFillCaretDown, AiOutlineGlobal, AiOutlineExclamationCircle } from 'react-icons/ai'
 import { BiSupport } from 'react-icons/bi'
@@ -17,6 +17,7 @@ import { Endpoint } from '@/routes/Route'
 import { usePathname } from 'next/navigation'
 import logoMobile from '@/assets/logo-mobile.png'
 import Image from 'next/image'
+import { deleteCookies, getCookies } from '@/app/action'
 const Header = () => {
     const { i18n, t } = useTranslation('home')
     const currentLanguage = locales[i18n.language as keyof typeof locales]
@@ -28,6 +29,35 @@ const Header = () => {
         i18n.changeLanguage(lng)
     }
     const pathname = usePathname()
+    const [isLogged, setIsLogged] = useState<boolean>(false)
+    const [authInfo, setAuthInfo] = useState<string>("")
+    useEffect(() => {
+        getCookies("username").then(function (result) {
+            if (result) {
+                setAuthInfo(result)
+                setIsLogged(true)
+            }
+        });
+
+    }, [])
+    const [dropdownProfile, setDropdownProfile] = useState<boolean>(false)
+    const handleShowDropProfile = () => {
+        setDropdownProfile(!dropdownProfile)
+    }
+    const handleLogout = () => {
+        deleteCookies('jwt')
+        deleteCookies('username')
+        deleteCookies('email')
+        deleteCookies('fullName')
+        deleteCookies('phone')
+        deleteCookies('address')
+        setIsLogged(false)
+        setAuthInfo("")
+    }
+    const handleProfile = () => {
+
+    }
+
     return (
         <div className=' header-container flex items-center justify-between px-2 h-12 bg-gray-header text-white 
         fixed
@@ -38,8 +68,7 @@ const Header = () => {
         sm:text-[#ddd]
         sm:text-[11px]
         sm: border-t-[1px]
-        sm: border-orange-400
-          '>
+        sm: border-orange-400'>
             {/* --- mobile --- */}
             {/* menu */}
             <label className="menu sm:hidden" htmlFor='show-navbar'>
@@ -186,9 +215,7 @@ const Header = () => {
                 <div className="right justify-end items-center gap-5 flex">
 
 
-                    <div className={`contact cursor-pointer hover:underline ${pathname.startsWith(Endpoint.LOGIN) ? "text-[#f68b1f] transition-colors" : ""}`}>
-                        <Link href={Endpoint.LOGIN}> {t('header.login').toUpperCase()}</Link>
-                    </div>
+
 
                     <div className={`contact cursor-pointer hover:underline ${pathname.startsWith(Endpoint.CONTACT) ? "text-[#f68b1f] transition-colors" : ""}`}>
                         <Link href={Endpoint.CONTACT}> {t('header.contactUs').toUpperCase()}</Link>
@@ -212,6 +239,34 @@ const Header = () => {
                             : null
                         }
                     </div>
+                    {!isLogged ?
+                        <div className={`contact cursor-pointer hover:underline ${pathname.startsWith(Endpoint.LOGIN) ? "text-[#f68b1f] transition-colors" : ""}`}>
+                            <Link href={Endpoint.LOGIN}> {t('header.login').toUpperCase()}</Link>
+
+                        </div>
+
+                        : null
+                    }
+                    {isLogged ?
+                        <div className={`relative language cursor-pointer h-[38px]  flex items-center px-2 gap-1 hover:underline ${pathname.startsWith(Endpoint.PROFILE) ? "text-[#f68b1f] transition-colors" : ""}`}
+                            onClick={() => handleShowDropProfile()}>
+                            {`${t('header.welcome')} ${authInfo}`}
+                            <div className="">
+                                <AiFillCaretDown />
+                            </div>
+                            {dropdownProfile ?
+                                <div className='absolute top-[38px] w-full left-0 px-3 text-[13px] text-white bg-[#313334] flex flex-col gap-2 py-2 '>
+                                    <div className="eng hover:underline hover:text-orange-400  transition-colors"
+                                        onClick={() => handleProfile()}>{t('header.profile')}</div>
+                                    <div className="vi hover:underline hover:text-orange-400  transition-colors"
+                                        onClick={() => handleLogout()}>{t('header.logout')}</div>
+                                </div>
+                                : null
+                            }
+                        </div>
+                        : null
+                    }
+
                     <div className="search h-[38px] w-[38px] cursor-pointer bg-orange-400 text-3xl  flex items-center justify-center">
                         <AiOutlineSearch />
                     </div>

@@ -8,5 +8,6 @@ export const Endpoint = {
     SUPPORT: "/v1/support",
     CONTACT: "/v1/contact",
     LOGIN: "/login",
-    REGISTER: '/register'
+    REGISTER: '/register',
+    PROFILE: '/profile'
 }

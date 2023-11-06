@@ -3,7 +3,10 @@
         "contactUs": "Contact Us",
         "location": "Location",
         "question": "Questions",
-        "login": "Login"
+        "login": "Login",
+        "profile": "Profile",
+        "logout": "Logout",
+        "welcome": "Hi,"
     },
     "navbar": {
         "introduce": "Introduction",

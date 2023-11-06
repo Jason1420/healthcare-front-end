@@ -1,21 +1,17 @@
 'use client'
 import Banner from '@/components/banner/Banner'
-import Footer from '@/components/footer/Footer'
-import Header from '@/components/header/Header'
-import Navbar from '@/components/navbar/Navbar'
 import '@/i18n/i18n'
 import { BsCalendar2Minus } from 'react-icons/bs'
 import { LuStethoscope } from 'react-icons/lu'
 import { RiSearch2Line } from 'react-icons/ri'
 import SearchBar from '@/components/searchBar/SearchBar'
-import { Endpoint } from '@/routes/Route'
 import { useTranslation } from 'react-i18next'
 import axios from 'axios'
-import { useEffect, useState } from 'react'
 import { ApiURL } from '@/routes/ApiUrl'
 import useSWR, { Fetcher } from 'swr'
 import { CMSToken } from '@/constant/CMSToken'
 import Image from 'next/image'
+import { getCookies } from '@/app/action'
 const V1Home = () => {
   const { t } = useTranslation()
   const fetchWithToken = (url: string, token: string) =>
@@ -25,25 +21,8 @@ const V1Home = () => {
   // const fetcher = (url:string) => fetch(url).then((res)=>res.json())
   const { data, error, isLoading } = useSWR([ApiURL.getAllNews, CMSToken],
     ([url, token]) => fetchWithToken(url, token))
-  console.log(data)
 
-  const handleSelectFile = (event: React.ChangeEvent<HTMLInputElement>) => {
 
-    let imgFiles = event.target.files;
-    console.log('---------> file before handle', imgFiles)
-    if (imgFiles) {
-      const file = imgFiles[0];
-      readFile(file)
-
-    }
-  }
-  const readFile = (file: File) => {
-    const fileReader = new FileReader()
-    if (file) {
-      console.log('---------> file after handle', file)
-      console.log('---------> file last', fileReader.readAsDataURL(file));
-    }
-  }
   return (
     <div className="home-page">
       <Banner />

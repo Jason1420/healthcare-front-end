@@ -3,7 +3,10 @@
         "contactUs": "Liên hệ",
         "location": "Địa chỉ",
         "question": "Câu hỏi thường gặp",
-        "login": "Đăng nhập"
+        "login": "Đăng nhập",
+        "profile": "Thông tin",
+        "logout": "Đăng xuất",
+        "welcome": "Xin chào,,"
     },
     "navbar": {
         "introduce": "Giới thiệu",

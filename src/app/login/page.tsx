@@ -8,8 +8,8 @@ import Link from 'next/link';
 import axios from 'axios';
 import { ApiURL } from '@/routes/ApiUrl';
 import { redirect, useRouter } from 'next/navigation';
-import { useDispatch } from 'react-redux';
-import { isLogged } from '@/store/reducers/authReducer';
+import { cookies } from 'next/headers'
+import { createCookies } from '../action';
 const Login = () => {
     // logic for show password button
     const [isShowPassword, setShowPassword] = useState<boolean>(false);
@@ -28,8 +28,15 @@ const Login = () => {
             console.log(res)
 
             if (res.status === 200) {
+                createCookies('jwt', res.data.jwt)
+                createCookies('username', res.data.user.username)
+                createCookies('email', res.data.user.email)
+                createCookies('fullName', res.data.user.fullName)
+                createCookies('phone', res.data.user.phone)
+                createCookies('address', res.data.user.address)
 
                 router.push(Endpoint.HOME)
+
             }
         } catch (error) {
             setLoginErrorCode(true)
