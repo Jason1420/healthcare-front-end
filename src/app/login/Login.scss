@@ -1,7 +1,5 @@
 .login-background {
-    background-color: rgb(247, 247, 247);
     .login-container {
-        background-color: rgb(247, 247, 247);
         width: 100%;
         margin: auto;
         border-radius: 5px;
@@ -11,26 +9,16 @@
         right: 0;
 
         .login-logo {
-            text-align: center;
             padding: 20px 0;
             margin-bottom: 13px;
             img {
                 width: 143px;
                 margin-bottom: -30px;
+                margin: auto;
             }
         }
 
         .login-box {
-            height: 100%;
-            width: 470px;
-            margin: 0 auto;
-            background-color: white;
-            padding: 30px;
-            display: flex;
-            flex-direction: column;
-            border-radius: 5px;
-            margin-bottom: 100px;
-            margin-top: 20px;
             .login-title {
                 font-size: 26px;
                 font-weight: 500;
@@ -56,54 +44,10 @@
                     font-size: 16px;
                     margin-bottom: 7px;
                 }
-                .login-error-response {
-                    color: red;
-                    font-size: 14px;
-                    font-style: italic;
-                    margin: 0 0;
-                }
-                .label-form {
-                    position: relative;
-
-                    label {
-                        color: #1f1f1f;
-                        font-size: 16px;
-                        margin-bottom: 5px;
-                    }
-                }
-
-                .password-input-form {
-                    position: relative;
-
-                    input {
-                        background-color: rgb(247, 247, 247);
-                        border: 1px solid #e3e3e3;
-                        height: 46px;
-                        border-radius: 4px;
-                        font-weight: 500;
-                        font-size: 15px;
-                    }
-
-                    i {
-                        position: absolute;
-                        right: 10px;
-                        top: 16px;
-                        cursor: pointer;
-                    }
-                }
-
-                input {
-                    background-color: rgb(247, 247, 247);
-                    border: 1px solid #e3e3e3;
-                    height: 46px;
-                    border-radius: 4px;
-                    font-weight: 500;
-                    font-size: 15px;
-                }
             }
 
             button {
-                background: linear-gradient(to right, #ec66d8 10%, #df26a4 100%);
+                background: linear-gradient(to right, #0597f3 10%, #03e2d0 100%);
                 border: 0;
                 font-size: 22px;
                 width: 100%;
@@ -127,14 +71,6 @@
         }
     }
 }
-
-.formik-error {
-    color: red;
-    font-style: italic;
-    font-weight: 300;
-    font-size: 14px;
-    padding-left: 10px;
-}
 @media (max-width: 475px) {
     .login-background {
         background-color: white;
@@ -153,6 +89,7 @@
 
             .login-box {
                 padding: 15px;
+                margin-top: -10px;
                 width: 97%;
                 .login-title {
                     font-size: 26px;
@@ -169,17 +106,6 @@
 
                 .login-input {
                 }
-                button {
-                    background: linear-gradient(to right, #ec66d8 10%, #df26a4 100%);
-                    border: 0;
-                    font-size: 22px;
-                    width: 100%;
-                    border-radius: 4px;
-                    padding: 10px 26px;
-                    color: white;
-                    font-weight: 500;
-                    margin-bottom: 5px;
-                }
 
                 .account-footer {
                     font-weight: 500;
@@ -194,5 +120,8 @@
                 }
             }
         }
+    }
+    .form-control {
+        border: 1px solid #444;
     }
 }

@@ -2,7 +2,8 @@
     "header": {
         "contactUs": "Liên hệ",
         "location": "Địa chỉ",
-        "question": "Câu hỏi thường gặp"
+        "question": "Câu hỏi thường gặp",
+        "login": "Đăng nhập"
     },
     "navbar": {
         "introduce": "Giới thiệu",

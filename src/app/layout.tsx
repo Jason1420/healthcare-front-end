@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import CustomScrollbars from '@/components/CustomScrollbars/CustomScrollbars'
 import 'react-toastify/dist/ReactToastify.css';
+import { ReduxProvider } from '@/redux/provider';
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -20,11 +21,16 @@ export default function RootLayout({
             <head>
                 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
                 <script noModule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+                    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+                    crossOrigin="anonymous" referrerPolicy="no-referrer" />
             </head>
 
             <body className={`${inter.className} overflow-hidden`}>
                 <CustomScrollbars universal style={{ height: "100vh" }}>
+                    {/* <ReduxProvider> */}
                     {children}
+                    {/* </ReduxProvider> */}
                 </CustomScrollbars>
             </body>
 

@@ -2,7 +2,8 @@
     "header": {
         "contactUs": "Contact Us",
         "location": "Location",
-        "question": "Questions"
+        "question": "Questions",
+        "login": "Login"
     },
     "navbar": {
         "introduce": "Introduction",

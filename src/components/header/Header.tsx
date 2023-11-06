@@ -186,6 +186,10 @@ const Header = () => {
                 <div className="right justify-end items-center gap-5 flex">
 
 
+                    <div className={`contact cursor-pointer hover:underline ${pathname.startsWith(Endpoint.LOGIN) ? "text-[#f68b1f] transition-colors" : ""}`}>
+                        <Link href={Endpoint.LOGIN}> {t('header.login').toUpperCase()}</Link>
+                    </div>
+
                     <div className={`contact cursor-pointer hover:underline ${pathname.startsWith(Endpoint.CONTACT) ? "text-[#f68b1f] transition-colors" : ""}`}>
                         <Link href={Endpoint.CONTACT}> {t('header.contactUs').toUpperCase()}</Link>
                     </div>
