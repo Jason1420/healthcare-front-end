@@ -23,11 +23,11 @@ const Support = () => {
     return (
         <div className=" support-page w-full 
          mx-auto ">
-            <div className="top h-[200px] flex flex-col justify-center sm:items-center gap-4 ">
+            <div className="top h-[200px] mt-2 flex flex-col justify-center sm:items-center gap-4 ">
                 <div className="title text-xl text-center sm:text-3xl">
                     {t('title')}
                 </div>
-                <div className="search-bar flex ">
+                <div className="search-bar flex px-1">
                     <input className=' border-[2px] border-[#01acb9] outline-none h-[50px] w-full sm:w-[550px] px-5 rounded-bl-md rounded-tl-md' type="text" placeholder={t('placeHolder')} />
                     <div className="icon-search h-[50px] w-[20%] sm:w-[50px] flex items-center bg-[#01acb9]  text-white text-3xl  justify-center rounded-br-md rounded-tr-md cursor-pointer">
                         <AiOutlineSearch />
