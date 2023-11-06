@@ -59,7 +59,7 @@ const Introduction = () => {
         //     </div>
         // </div >
         <div className=" introduction-page w-full min-h-[100vh] sm:w-4/5 
-        h-full mx-auto mb-10">
+        h-full mx-auto mb-10 mt-14 sm:mt-0">
 
             {data ?
 
