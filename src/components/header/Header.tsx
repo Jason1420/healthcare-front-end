@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import menuIcon from '@/public/menu.svg'
 import { AiOutlineSearch, AiFillCaretDown, AiOutlineGlobal, AiOutlineExclamationCircle } from 'react-icons/ai'
-import { BiSupport } from 'react-icons/bi'
+import { BiSupport, BiLogOut, BiUserCircle, BiLogIn } from 'react-icons/bi'
 import { FaTimes } from 'react-icons/fa'
 import { GiHealing } from 'react-icons/gi'
 import { TbBrandProducthunt } from 'react-icons/tb'
@@ -14,7 +14,7 @@ import { changeLanguage } from 'i18next'
 import './Header.scss'
 import Link from 'next/link'
 import { Endpoint } from '@/routes/Route'
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import logoMobile from '@/assets/logo-mobile.png'
 import Image from 'next/image'
 import { deleteCookies, getCookies } from '@/app/action'
@@ -54,8 +54,9 @@ const Header = () => {
         setIsLogged(false)
         setAuthInfo("")
     }
+    const router = useRouter()
     const handleProfile = () => {
-
+        router.push(Endpoint.PROFILE)
     }
 
     return (
@@ -156,6 +157,7 @@ const Header = () => {
                     </div>
 
                 </div>
+
                 {dropdownLng &&
                     <ul className='px-12 mt-[-5px] '>
                         <li>
@@ -167,6 +169,43 @@ const Header = () => {
                                 onClick={() => changeLanguage("vi")}>Tiếng Việt</div>
                         </li>
                     </ul>
+                }
+                {isLogged ?
+                    <div className={`px-[5px] sidebar-mobile__item flex items-center gap-[6px]`}>
+                        <div className="img">
+                            <BiUserCircle />
+                        </div>
+
+                        <div className={`img-title }`}
+                            onClick={() => handleProfile()}>
+                            {`${t('header.welcome')} ${authInfo}`}
+                        </div>
+
+                    </div>
+                    :
+                    <div className={`px-[5px] sidebar-mobile__item flex items-center gap-[6px]`}>
+                        <div className="img">
+                            <BiLogIn />
+                        </div>
+
+                        <div className={`img-title }`}
+                        >
+                            <Link href={Endpoint.LOGIN}> {t('header.login')}</Link>
+                        </div>
+
+                    </div>
+                }
+                {isLogged ?
+                    <div className={`px-[5px] sidebar-mobile__item flex items-center gap-[6px]`}>
+                        <div className="img">
+                            <BiLogOut />
+                        </div>
+
+                        <div className={`img-title `} onClick={() => handleLogout()}>
+                            {t('header.logout')}
+                        </div>
+                    </div>
+                    : null
                 }
             </div>
 

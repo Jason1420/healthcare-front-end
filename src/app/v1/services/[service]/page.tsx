@@ -7,7 +7,6 @@ import { ApiURL } from '@/routes/ApiUrl'
 import { CMSToken } from '@/constant/CMSToken'
 const page = () => {
     const params = useParams()
-    console.log(params.service)
     const fetchWithToken = (url: string, token: string) =>
         axios
             .get(url, { headers: { Authorization: "Bearer " + token } })

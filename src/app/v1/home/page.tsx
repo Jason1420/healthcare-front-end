@@ -12,6 +12,8 @@ import useSWR, { Fetcher } from 'swr'
 import { CMSToken } from '@/constant/CMSToken'
 import Image from 'next/image'
 import { getCookies } from '@/app/action'
+import Link from 'next/link'
+import { Endpoint } from '@/routes/Route'
 const V1Home = () => {
   const { t } = useTranslation()
   const fetchWithToken = (url: string, token: string) =>
@@ -80,12 +82,14 @@ const V1Home = () => {
 
                 <div className="content flex-col sm:flex-row flex gap-2 ">
                   <div className="image mx-auto sm:mx-0 ">
-                    <Image src={item?.attributes.thumbnail.data.attributes.formats.thumbnail.url} alt='thumbnail'
-                      width={156} height={156} />
+                    <Link href={`${Endpoint.NEWS}/${item.attributes.slug}`} >
+                      <Image src={item?.attributes.thumbnail.data.attributes.formats.thumbnail.url} alt='thumbnail'
+                        width={156} height={156} />
+                    </Link>
                   </div>
                   <div className=" w-full sm:w-4/5 sm:mx-4">
-                    <div className="font-bold title text-sm text-center sm:text-start sm:text-base ">
-                      {item.attributes.title}
+                    <div className="font-bold title text-sm text-center sm:text-start sm:text-base hover:text-main-color cursor-pointer">
+                      <Link href={`${Endpoint.NEWS}/${item.attributes.slug}`} > {item.attributes.title}</Link>
                     </div>
                     <div className="italic desc text-sm text-center  hidden sm:flex
                     sm:text-sm

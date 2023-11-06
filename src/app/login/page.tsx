@@ -25,7 +25,7 @@ const Login = () => {
     const handleLogin = async () => {
         try {
             const res = await axios.post(ApiURL.login, { identifier: username, password: password },)
-            console.log(res)
+
 
             if (res.status === 200) {
                 createCookies('jwt', res.data.jwt)

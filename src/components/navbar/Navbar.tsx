@@ -8,7 +8,6 @@ import { usePathname } from 'next/navigation'
 const Navbar = () => {
     const pathname = usePathname()
     const { t } = useTranslation('home')
-    console.log(pathname)
     return (
         <div className='navbar-container hidden sm:flex sm:border '>
             <div className="desktop w-4/5 mx-auto text-[#111] text-xl flex gap-5 h-24 items-center justify-between

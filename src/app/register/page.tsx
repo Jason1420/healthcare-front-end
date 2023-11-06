@@ -50,7 +50,7 @@ const Register = () => {
                 setPasswordNotMatch(true)
             }
         } catch (error: any) {
-            console.log(error)
+
             if (error.response.data.error.message === "email must be a valid email") {
                 setEmailInvalid(true)
             } else if (error.response.data.error.message === "password must be at least 6 characters") {

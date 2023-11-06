@@ -16,7 +16,6 @@ const Introduction = () => {
     const { data, error, isLoading } = useSWR([ApiURL.ApiIntroduction, CMSToken],
         ([url, token]) => fetchWithToken(url, token))
     if (data) {
-        console.log(data.data[0].attributes.template)
     }
     return (
         // <div className=" introduction-page w-full sm:w-4/5 

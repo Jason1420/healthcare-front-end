@@ -7,7 +7,8 @@ export const Endpoint = {
     NEWS: "/v1/news",
     SUPPORT: "/v1/support",
     CONTACT: "/v1/contact",
+    PROFILE: '/v1/profile',
     LOGIN: "/login",
     REGISTER: '/register',
-    PROFILE: '/profile'
+
 }
