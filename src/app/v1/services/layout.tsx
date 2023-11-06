@@ -85,17 +85,22 @@ export default function ServicesLayout({
                     </div>
                     <div className="icon ml-auto my-auto pr-3">
                         <PiCaretDownBold />
-
                     </div>
                 </label>
                 <div className="med-service-list hidden flex-wrap bg-[#555] justify-around gap-y-3 py-3">
                     {data?.data.map((data: any, index: number) => {
                         return (
-                            <div key={index} className={`serv rounded-md flex justify-center flex-wrap bg-[#f2f2f2] px-2 py-2 text-[15px] font-semibold text-[#444] hover:text-main-color hover:underline cursor-pointer ${params.service === data.attributes.slug ? "text-white bg-orange-400" : ""}`} >
+                            <div key={index} className={`serv sm:hidden rounded-md flex justify-center flex-wrap bg-[#f2f2f2] px-2 py-2 text-[15px] font-semibold text-[#444] hover:text-main-color hover:underline cursor-pointer ${params.service === data.attributes.slug ? "text-white bg-orange-400" : ""}`} >
                                 <Link href={`${Endpoint.SERVICES}/${data.attributes.slug}`}>{data.attributes.title}</Link>
                             </div>
                         )
                     })}
+                    <label htmlFor='show-regis-form' className="serv sm:hidden rounded-md flex justify-center flex-wrap bg-[#15a082] text-white px-2 py-2 text-[15px] font-semibold">
+                        Đăng ký ngay
+                    </label>
+                    <label htmlFor='show-consult-form' className="serv rounded-md sm:hidden flex justify-center flex-wrap bg-[#15a082] text-white px-2 py-2 text-[15px] font-semibold">
+                        Tư vấn ngay
+                    </label>
                 </div>
                 {/*  */}
                 <div className="hidden sm:flex sm:flex-col left w-1/5 h-full bg-white border border-b-[#d7d4d4] border-r-[#d7d4d4] border-l-[#d7d4d4] ">
@@ -116,10 +121,10 @@ export default function ServicesLayout({
 
                     </div>
 
-                    <label htmlFor='show-regis-form' className="regis flex justify-center border py-3 mb-4 mt-8 mx-2 bg-[#15a082] text-white rounded-lg font-semibold cursor-pointer hover:text-xl hover:bg-opacity-80 hover:text-[#444] transition-all">
+                    <label htmlFor='show-regis-form' className="regis flex  justify-center border py-3 mb-4 mt-8 mx-2 bg-[#15a082] text-white rounded-lg font-semibold cursor-pointer hover:text-xl hover:bg-opacity-80 hover:text-[#444] transition-all ">
                         Đăng ký ngay
                     </label>
-                    <label htmlFor='show-consult-form' className="regis flex mb-5 justify-center font-semibold border py-3 my-2 mx-2 bg-[#15a082] text-white rounded-lg cursor-pointer hover:text-xl hover:bg-opacity-80 hover:text-[#444] transition-all">
+                    <label htmlFor='show-consult-form' className="regis flex mb-5  justify-center font-semibold border py-3 my-2 mx-2 bg-[#15a082] text-white rounded-lg cursor-pointer hover:text-xl hover:bg-opacity-80 hover:text-[#444] transition-all">
                         Tư vấn ngay
                     </label>
 
@@ -131,7 +136,7 @@ export default function ServicesLayout({
             <label className="overplay-regis hidden absolute z-[70] top-[-144px] bottom-0 right-0 left-0 w-[100vw] mr-auto
             bg-[rgba(0,0,0,0.3)] " htmlFor='show-regis-form'>
             </label>
-            <div className="regis-form hidden fixed mx-auto  top-[100px] left-[calc(50%-200px)] rounded-tl-xl rounded-b-xl z-[80] bg-white w-[400px] h-[80vh] overflow-hidden">
+            <div className="regis-form hidden fixed mx-auto  top-[100px] form:left-[calc(50%-200px)] rounded-tl-xl rounded-b-xl z-[80] bg-white form:w-[400px] w-full h-[80vh] overflow-hidden">
                 <CustomScrollbars universal style={{ height: "80vh" }} >
                     <div className="title text-center text-xl font-semibold pt-3">
                         THÔNG TIN ĐĂNG KÝ
@@ -180,7 +185,7 @@ export default function ServicesLayout({
             <label className="overplay-consult hidden absolute z-[70] top-[-144px] bottom-0 right-0 left-0 w-[100vw] mr-auto
             bg-[rgba(0,0,0,0.3)] " htmlFor='show-consult-form'>
             </label>
-            <div className="consult-form hidden fixed mx-auto  top-[100px] left-[calc(50%-200px)] rounded-tl-xl rounded-b-xl z-[80] bg-white min-w-[400px] max-w-[400px] h-[65vh] overflow-hidden">
+            <div className="consult-form hidden fixed mx-auto  top-[100px] form:left-[calc(50%-200px)] rounded-tl-xl rounded-b-xl z-[80] bg-white form:w-[400px] w-full  h-[65vh] overflow-hidden">
                 <CustomScrollbars universal style={{ height: "65vh", width: 400 }} >
                     <div className="title text-center text-xl font-semibold pt-3">
                         ĐĂNG KÝ TƯ VẤN

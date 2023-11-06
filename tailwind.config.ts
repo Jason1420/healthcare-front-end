@@ -10,6 +10,7 @@ const config: Config = {
     extend: {
       screens: {
         'mobile': '475px',
+        'form': '400px'
       },
       colors: {
         'gray-header': '#33353F',
